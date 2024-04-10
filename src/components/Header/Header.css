@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 7rem;
+}
+
+.logo {
+  width: 11.5rem;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+ul a {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #191919;
+
+}

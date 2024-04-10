@@ -1,7 +1,13 @@
+import './App.css'
+import { Header } from "./components/Header/Header";
+import { HeroSection } from './components/HeroSection/HeroSetion';
+
 export const App = () => {
   return (
-    <>
-      <h1>Food Hut</h1>
-    </>
+
+    <div className="app-container">
+      <HeroSection/>
+    </div>
+
   );
 };

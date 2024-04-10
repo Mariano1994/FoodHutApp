@@ -1,0 +1,124 @@
+.hero-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(253,197,94,1) 220%);
+  background-color: #E5E5E5;
+
+}
+
+.hero-section__info {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 7rem
+}
+
+.hero-trust {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  padding: 0.5rem 1.8rem;
+  width: 25%;
+  border-radius: 15px;
+  background-color: rgba(245, 71, 72, 0.3);
+  color: #191919;
+  gap: 0.5rem
+}
+
+.hero-section__title p {
+  font-size: 8rem;
+  font-weight: 900;
+}
+
+.text-black {
+  color: #191919;
+}
+
+.text-red {
+  color:#f54748;
+}
+
+.text-yellow {
+  color:#FDC55E;
+}
+
+.hero-section__title img {
+ margin-left: 30rem;
+ position: absolute;
+ margin-top: -2.1rem;
+
+}
+
+.hero-section__paragrath {
+width: 60%
+}
+
+.hero-section__paragrath p {
+  font-size: 2.4rem;
+  line-height: 4rem;
+  font-weight: 400;
+}
+
+
+.hero-section__content {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.hero-section__img img {
+  width: 75rem;
+  height: 67rem;
+}
+
+.keep-in__touch {
+  margin-left: 7rem;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+.keep-in__touch button {
+  width: 16.2rem;
+  height: 4.5rem;
+  background-color:#f54748;
+  color: #E5E5E5;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.watch > img {
+  margin-top: 2rem;
+  width: 80px;
+  height: 80px;
+}
+
+.move-foward {
+  margin-left: 4.5rem;
+  display: flex;
+ 
+}
+
+.move-foward img {
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+/* 
+Colors
+black => #191919;
+red => #f54748;
+Yellow => #FDC55E
+White => #E5E5E5
+*/
