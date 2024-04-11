@@ -1,0 +1,17 @@
+
+.foodhut-menu__title {
+  margin-top: -14rem;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45rem;
+  
+}
+.foodhut-menu__title h2 {
+  font-size: 4.8rem;
+  font-weight: 800;
+  text-align: center;
+  color: #191919;
+  margin-bottom: 5rem;
+}
