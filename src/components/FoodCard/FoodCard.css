@@ -1,0 +1,123 @@
+
+.food-card {
+  width: 31rem;
+  height: 51rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content:center;
+
+  margin-bottom: 3rem;
+  background-image: linear-gradient( to bottom , rgba(255,255,255,1) 40%, rgba(245, 71, 72) 390%);
+  border-radius: 25px;
+  padding: 3.3rem;
+  cursor: pointer;
+
+}
+
+.food-card__img {
+  border-image: linear-gradient( to top , rgba(255,255,255,1) 40%, rgba(245, 71, 72) 390%);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+
+}
+
+
+.food-card__img img {
+  width: 18rem;
+  height: 18rem;
+  border: 7px solid transparent;
+  border-radius: 50%
+}
+
+.food-card__price {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #FDC55E;
+  border: 3px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: -5.3rem;
+  margin-left: 12rem;
+}
+
+.food-card__price span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+
+}
+
+
+
+.food-testimonials {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem
+}
+
+.costumers-photo {
+  display: flex
+}
+
+.costumers-photo > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: -1.5rem;
+  border: 2px solid #E5E5E5;
+}
+
+.food-testimonials span{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+
+.food-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.food-card__info h3 {
+  font-size: 2rem;
+  color: #f54748;
+}
+
+.food-card__info p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 8rem;
+}
+
+.food-card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #f54748;
+  color: #E5E5E5;
+  border-radius: 30px;
+  position: absolute;
+  margin-top: 50.1rem;
+}
+
+/* 
+Colors
+black => #191919;
+red => #f54748;
+Yellow => #FDC55E
+White => #E5E5E5
+*/

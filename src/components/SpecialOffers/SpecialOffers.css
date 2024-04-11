@@ -1,0 +1,68 @@
+.special-offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 12rem;
+  
+}
+
+.special-offers .special-offers__title {
+  font-size: 4.8rem;
+  font-weight: 800;
+  text-align: center;
+  color: #191919;
+}
+
+.special-offers .special-offers__paragra {
+  width: 85.6rem;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.8rem;
+  color: #191919;
+  font-weight: 300;
+  margin-bottom: 6.6rem;
+}
+
+.detail {
+  margin-top: -8rem;
+  margin-left: -2rem;
+  position: absolute;
+
+  
+}
+
+.detail img {
+  width: 15rem;
+}
+
+
+/* CARDS */
+.food-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 10rem;
+  gap: 2rem;
+
+}
+
+.rose {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -5rem;
+  margin-right: -10rem;
+}
+
+
+/* 
+Colors
+black => #191919;
+red => #f54748;
+Yellow => #FDC55E
+White => #E5E5E5
+*/

@@ -1,0 +1,33 @@
+.why-foodhut__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -18rem;
+  
+}
+
+.why-foodhut__img img {
+  width: 78rem;
+  height: 125rem;
+}
+
+.why-foodhut__info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 75rem;
+  margin-top: -8rem;
+  position: absolute;
+  gap: 3rem;
+}
+
+
+.why-foodhut__title {
+  font-size: 4rem;
+  font-weight: 800;
+  width: 70%;
+  color: #191919;
+  line-height: 8rem;
+}
+
+
