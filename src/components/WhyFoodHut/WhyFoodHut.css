@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -18rem;
+  margin-top: -19rem;
   
 }
 
@@ -30,4 +30,59 @@
   line-height: 8rem;
 }
 
+.why-foodhut__paragrapth {
+  width: 90%;
+}
+.why-foodhut__paragrapth p {
+  font-size: 1.8rem;
+  color: #191919;
+  line-height: 3rem;
+  font-weight: 300;
+}
 
+.why-foodhut__services {
+  display: flex;
+  align-items: center;
+  gap: 11rem;
+}
+
+.services-left, 
+.services-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.services-left, 
+.services-right span {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.why-foodhut__service {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #f54748;
+  color: #E5E5E5;
+  border-radius: 30px;
+  position: absolute;
+  margin-top: 50.1rem;
+}
+
+
+
+/* 
+Colors
+black => #191919;
+red => #f54748;
+Yellow => #FDC55E
+White => #E5E5E5
+*/
