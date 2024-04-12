@@ -3,7 +3,7 @@ import Detail from '../../assets/detail.svg'
 import Rose from '../../assets/rosemary.svg'
 import { FoodCard } from '../FoodCard/FoodCard'
 
-export const SpecialOffers = () => {
+export const SpecialOffers = ({cardsInfo}) => {
   return (
     <>
       <div className='special-offers'>
@@ -16,10 +16,12 @@ export const SpecialOffers = () => {
       </div>
 
       <div className='food-cards-container'>
-        <FoodCard/>
-        <FoodCard/>
-        <FoodCard/>
-        <FoodCard/>      
+        {cardsInfo.map((card, index) => {
+          
+          if(index <= 3)
+          return <FoodCard card ={card} key={card.id}/>
+        })}
+
       </div>
 
       <div className='rose'>

@@ -1,18 +1,18 @@
 import './FoodCard.css'
-import ImageFood1 from '../../assets/food1.png'
 import Costumer1 from '../../assets/costumersPhoto/1.jpg'
 import Costumer2 from '../../assets/costumersPhoto/2.jpg'
 import Costumer3 from '../../assets/costumersPhoto/3.jpg'
 import Star from '../../assets/star.svg'
 
-export const FoodCard = () => {
+export const FoodCard = ({card}) => {
+
   return (
     <>
       <div className='food-card'>
           <div className='food-card__img'>
-            <img src={ImageFood1} />
+            <img src={card?.imgURL} />
             <div className='food-card__price'>
-              <span>$10</span>
+              <span>${card?.price}</span>
             </div>
           </div>
 
@@ -23,12 +23,14 @@ export const FoodCard = () => {
                 <img src={Costumer3} alt="costumer user photo" />
 
             </div>
-            <span><img src={Star} /> (4.5)</span>
+            <span><img src={Star} /> ({card?.rating})</span>
           </div>
 
           <div className='food-card__info'>
-            <h3>Kebab</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas placeat dicta necessitatibus</p>
+            <h3>{card?.name}</h3>
+            <div className='paragra'>
+            <p>{card?.description}</p>
+            </div>
           </div>
 
           <a href="#"> Order Now</a>
