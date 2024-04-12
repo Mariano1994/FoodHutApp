@@ -1,4 +1,5 @@
 import './App.css'
+import { Footer } from './components/Footer/Footer';
 import { HeroSection } from './components/HeroSection/HeroSetion';
 import { Menu } from './components/Menu/Menu';
 import { PopularFood } from './components/PopularFood/PopularFood';
@@ -14,6 +15,7 @@ export const App = () => {
       <WhyFoodHut/> 
       <Menu/> 
       <PopularFood/>
+      <Footer/>
     </div>
 
   );
