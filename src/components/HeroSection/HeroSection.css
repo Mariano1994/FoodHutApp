@@ -80,6 +80,9 @@ width: 60%
   gap: 3.5rem;
 }
 .keep-in__touch button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16.2rem;
   height: 4.5rem;
   background-color:#f54748;

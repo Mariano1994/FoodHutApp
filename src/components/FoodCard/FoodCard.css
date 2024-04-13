@@ -12,7 +12,11 @@
   border-radius: 25px;
   padding: 3.3rem;
   cursor: pointer;
+  transition: all .2s;
+}
 
+.food-card:hover {
+  transform: scale(.9)
 }
 
 .paragra {
