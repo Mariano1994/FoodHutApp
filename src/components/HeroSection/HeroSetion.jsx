@@ -12,10 +12,8 @@ import Costumer4 from '../../assets/costumersPhoto/4.jpg'
 import Costumer5 from '../../assets/costumersPhoto/5.jpg'
 import Costumer6 from '../../assets/costumersPhoto/6.jpg'
 import Costumer7 from '../../assets/costumersPhoto/7.jpg'
-import Star from '../../assets/star.svg'
-
 import { Header } from "../Header/Header"
-import { SearchBar } from '../SearchBar/SearchBar'
+
 
 export const HeroSection = () => {
   return (
@@ -49,8 +47,8 @@ export const HeroSection = () => {
 
         </div>
 
-        <div className='costumres-trust'>
-            <div className='costumres-trust__photo'>
+        <div className='costumers-trust'>
+            <div className='costumers-trust__photo'>
                 <img src={Costumer1} alt="costumer user photo" />
                 <img src={Costumer2} alt="costumer user photo" />
                 <img src={Costumer3} alt="costumer user photo" />

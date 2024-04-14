@@ -73,7 +73,7 @@ width: 60%
 }
 
 
-.costumres-trust {
+.costumers-trust {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -81,19 +81,20 @@ width: 60%
   margin-top: -16rem;
   }
   
-  .costumres-trust__photo {
+  .costumers-trust__photo {
     display: flex
   }
   
-  .costumres-trust__photo > img {
+  .costumers-trust__photo > img {
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
     margin-left: -2rem;
-    border: 4px solid rgba(245, 71, 72, 0.7);
+    /* border: 4px solid rgba(245, 71, 72, 0.7); */
+    border: 3px solid #E5E5E5;
   }
   
-  .costumres-trust span{
+  .costumers-trust span{
     font-size: 2rem;
     display: flex;
     align-items: center;
