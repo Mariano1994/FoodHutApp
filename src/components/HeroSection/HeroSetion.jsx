@@ -5,6 +5,15 @@ import Decore from '../../assets/Decore.svg'
 import PlayButton from '../../assets/play-button.svg'
 import MoveFoward from '../../assets/move-foward.svg'
 
+import Costumer1 from '../../assets/costumersPhoto/8.jpg'
+import Costumer2 from '../../assets/costumersPhoto/9.jpg'
+import Costumer3 from '../../assets/costumersPhoto/10.jpg'
+import Costumer4 from '../../assets/costumersPhoto/4.jpg'
+import Costumer5 from '../../assets/costumersPhoto/5.jpg'
+import Costumer6 from '../../assets/costumersPhoto/6.jpg'
+import Costumer7 from '../../assets/costumersPhoto/7.jpg'
+import Star from '../../assets/star.svg'
+
 import { Header } from "../Header/Header"
 import { SearchBar } from '../SearchBar/SearchBar'
 
@@ -39,7 +48,21 @@ export const HeroSection = () => {
           </div>
 
         </div>
-        <SearchBar/>
+
+        <div className='costumres-trust'>
+            <div className='costumres-trust__photo'>
+                <img src={Costumer1} alt="costumer user photo" />
+                <img src={Costumer2} alt="costumer user photo" />
+                <img src={Costumer3} alt="costumer user photo" />
+                <img src={Costumer4} alt="costumer user photo" />
+                <img src={Costumer5} alt="costumer user photo" />
+                <img src={Costumer6} alt="costumer user photo" />
+                <img src={Costumer7} alt="costumer user photo" />
+
+            </div>
+            <span> <span className='text-red'>250,000+</span> meals <span className='text-yellow'>delivered </span>last year!</span>
+          </div>  
+
         <div className='keep-in__touch'>
             <button className='app'>
               Download App
