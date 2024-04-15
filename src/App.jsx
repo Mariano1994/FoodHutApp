@@ -19,12 +19,27 @@ export const App = () => {
     setFoodCards(topRated);
   };
 
+  //Function to serachFood
+  const onSearchFoodHanldler = (query) => {
+    const result = [];
+    // if (query.lenght == null) return;
+    foodCards.map((foodCard) => {
+      if (foodCard.name.toLowerCase().includes(query.toLowerCase()))
+        result.push(foodCard);
+    });
+    setFoodCards(result);
+  };
+
   return (
     <div className="app-container">
       <HeroSection />
-      <SpecialOffers cardsInfo={foodCards} />
+      <SpecialOffers cardsInfo={CardObjData} />
       <WhyFoodHut />
-      <Menu menu={foodCards} onHandleTopRatedFood={handlerTopRatedFood} />
+      <Menu
+        menu={foodCards}
+        onHandleTopRatedFood={handlerTopRatedFood}
+        onSerachFood={onSearchFoodHanldler}
+      />
       <PopularFood />
       <Footer />
     </div>

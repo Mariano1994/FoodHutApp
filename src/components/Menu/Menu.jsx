@@ -2,7 +2,7 @@ import { FoodCard } from "../FoodCard/FoodCard";
 import { SearchBar } from "../SearchBar/SearchBar";
 import "./Menu.css";
 
-export const Menu = ({ menu, onHandleTopRatedFood }) => {
+export const Menu = ({ menu, onHandleTopRatedFood, onSerachFood }) => {
   return (
     <>
       <div className="foodhut-menu">
@@ -16,7 +16,10 @@ export const Menu = ({ menu, onHandleTopRatedFood }) => {
             <span className="text-red">Love</span>
           </h2>
         </div>
-        <SearchBar onHandleTopRatedFood={onHandleTopRatedFood} />
+        <SearchBar
+          onHandleTopRatedFood={onHandleTopRatedFood}
+          onSerachFood={onSerachFood}
+        />
         <div className="food-cards-container">
           {menu.map((men) => <FoodCard card={men} key={men.id} />).reverse()}
         </div>
