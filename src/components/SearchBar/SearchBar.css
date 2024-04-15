@@ -1,3 +1,9 @@
+.serach {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .search-from {
   width: 45rem;
   height: 4.5rem;
@@ -21,7 +27,6 @@
   flex: 1;
   outline: none;
   border: none;
-
 }
 
 .search-from input::placeholder {
@@ -38,5 +43,20 @@
   align-items: center;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.5rem;
+  background-color: #f54748;
+  color: #e5e5e5;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 1.5rem;
+  margin-top: -6.5rem;
   cursor: pointer;
 }

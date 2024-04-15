@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: -28rem;
-  
 }
 
 .why-foodhut__img img {
@@ -20,7 +19,6 @@
   position: absolute;
   gap: 3rem;
 }
-
 
 .why-foodhut__title {
   font-size: 4rem;
@@ -45,14 +43,14 @@
   gap: 11rem;
 }
 
-.services-left, 
+.services-left,
 .services-right {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.services-left, 
+.services-left,
 .services-right span {
   font-size: 1.8rem;
   font-weight: 700;
@@ -70,13 +68,11 @@
   justify-content: center;
   padding: 1rem 2rem;
   background-color: #f54748;
-  color: #E5E5E5;
+  color: #e5e5e5;
   border-radius: 30px;
   position: absolute;
   margin-top: 50.1rem;
 }
-
-
 
 /* 
 Colors

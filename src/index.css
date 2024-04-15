@@ -14,20 +14,17 @@
   font-family: poppins, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
- 
 }
 
 a {
   font-weight: 500;
   text-decoration: none;
-  color:  #191919;
+  color: #191919;
 }
 
 li {
   list-style: none;
 }
-
 
 /* button:focus,
 button:focus-visible {

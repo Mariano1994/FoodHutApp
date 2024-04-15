@@ -1,5 +1,9 @@
 .wrap {
-  background-image: linear-gradient( to bottom , rgba(255,255,255,1) 40%, rgba(253,197,94,1) 390%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(253, 197, 94, 1) 390%
+  );
 }
 
 .popular-food__container {
@@ -31,10 +35,10 @@
 } */
 
 .popular-food__paragra p {
-font-size: 1.8rem;
-line-height: 3.5rem;
-font-weight: 300;
-width: 69%;
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+  font-weight: 300;
+  width: 69%;
 }
 
 .popular-food__app {
@@ -48,8 +52,8 @@ width: 69%;
   align-items: center;
   gap: 1rem;
   background-color: #191919;
-  padding: .8rem 1rem;
-  color: #E5E5E5;
+  padding: 0.8rem 1rem;
+  color: #e5e5e5;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -57,7 +61,6 @@ width: 69%;
 .popular-food__img {
   width: 50%;
   margin-right: -20rem;
-  
 }
 
 .chef {
@@ -71,6 +74,3 @@ width: 69%;
   margin-top: 40rem;
   margin-left: 21rem;
 }
-
-
-
