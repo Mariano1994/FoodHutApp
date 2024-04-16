@@ -1,4 +1,5 @@
 import { FoodCard } from "../FoodCard/FoodCard";
+import { NotFoundMessage } from "../NotFoundMessage/NotFoundMessage";
 import { SearchBar } from "../SearchBar/SearchBar";
 import "./Menu.css";
 
@@ -25,7 +26,7 @@ export const Menu = ({ menu, query, onSetQuery, onHandleTopRatedFood }) => {
           {menu.length > 0 ? (
             menu.map((men) => <FoodCard card={men} key={men.id} />).reverse()
           ) : (
-            <h2>Food not found</h2>
+            <NotFoundMessage />
           )}
         </div>
       </div>
