@@ -10,6 +10,15 @@ import { CardObjData } from "./utils/data";
 
 export const App = () => {
   const [foodCards, setFoodCards] = useState(CardObjData);
+  const [query, setQuery] = useState("");
+
+  const handlerSetQuery = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const filteredFood = foodCards.filter((foodCard) =>
+    foodCard.name.toLowerCase().includes(query.toLowerCase())
+  );
 
   // Function to handle sort by top rationg
   const handlerTopRatedFood = () => {
@@ -19,26 +28,16 @@ export const App = () => {
     setFoodCards(topRated);
   };
 
-  //Function to serachFood
-  const onSearchFoodHanldler = (query) => {
-    const result = [];
-    // if (query.lenght == null) return;
-    foodCards.map((foodCard) => {
-      if (foodCard.name.toLowerCase().includes(query.toLowerCase()))
-        result.push(foodCard);
-    });
-    setFoodCards(result);
-  };
-
   return (
     <div className="app-container">
       <HeroSection />
       <SpecialOffers cardsInfo={CardObjData} />
       <WhyFoodHut />
       <Menu
-        menu={foodCards}
+        menu={filteredFood}
         onHandleTopRatedFood={handlerTopRatedFood}
-        onSerachFood={onSearchFoodHanldler}
+        query={query}
+        onSetQuery={handlerSetQuery}
       />
       <PopularFood />
       <Footer />

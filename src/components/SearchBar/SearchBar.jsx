@@ -2,32 +2,18 @@ import "./SearchBar.css";
 import SearchButtonSubmit from "../../assets/search-button-submit.svg";
 import { useState } from "react";
 
-export const SearchBar = ({ onHandleTopRatedFood, onSerachFood }) => {
-  const [foodQuery, setFoodQuery] = useState("");
-
-  const onChangeValue = (event) => {
-    event.preventDefault();
-    setFoodQuery(event.target.value);
-    onSerachFood(foodQuery);
-  };
-
-  const onSubmitSearch = (event) => {
-    event.preventDefault();
-    onSerachFood(foodQuery);
-    setFoodQuery("");
-  };
-
+export const SearchBar = ({ query, onSetQuery, onHandleTopRatedFood }) => {
   return (
     <>
       <div className="serach">
-        <form className="search-from" onSubmit={onSubmitSearch}>
+        <form className="search-from">
           <input
             type="text"
             placeholder="search food"
             className="search-input"
             required
-            value={foodQuery}
-            onChange={onChangeValue}
+            value={query}
+            onChange={onSetQuery}
           />
           <button type="submit">
             <img src={SearchButtonSubmit} />

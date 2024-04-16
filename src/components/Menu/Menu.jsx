@@ -2,7 +2,7 @@ import { FoodCard } from "../FoodCard/FoodCard";
 import { SearchBar } from "../SearchBar/SearchBar";
 import "./Menu.css";
 
-export const Menu = ({ menu, onHandleTopRatedFood, onSerachFood }) => {
+export const Menu = ({ menu, query, onSetQuery, onHandleTopRatedFood }) => {
   return (
     <>
       <div className="foodhut-menu">
@@ -17,11 +17,16 @@ export const Menu = ({ menu, onHandleTopRatedFood, onSerachFood }) => {
           </h2>
         </div>
         <SearchBar
+          query={query}
+          onSetQuery={onSetQuery}
           onHandleTopRatedFood={onHandleTopRatedFood}
-          onSerachFood={onSerachFood}
         />
         <div className="food-cards-container">
-          {menu.map((men) => <FoodCard card={men} key={men.id} />).reverse()}
+          {menu.length > 0 ? (
+            menu.map((men) => <FoodCard card={men} key={men.id} />).reverse()
+          ) : (
+            <h2>Food not found</h2>
+          )}
         </div>
       </div>
     </>
