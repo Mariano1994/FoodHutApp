@@ -3,15 +3,22 @@ import Costumer1 from "../../assets/costumersPhoto/1.jpg";
 import Costumer2 from "../../assets/costumersPhoto/2.jpg";
 import Costumer3 from "../../assets/costumersPhoto/3.jpg";
 import Star from "../../assets/star.svg";
+import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 
 export const FoodCard = ({ card }) => {
+  console.log(card.info?.costForTwo.split());
   return (
     <>
       <div className="food-card">
         <div className="food-card__img">
-          <img src={card?.imgURL} />
+          <img src={`${BASE_IMAGE_URL}${card?.info?.cloudinaryImageId}`} />
           <div className="food-card__price">
-            <span>${card?.price}</span>
+            <span>
+              $
+              {card?.info?.avgRating > 4
+                ? card?.info?.avgRating * 5
+                : card?.info?.avgRating * 7}
+            </span>
           </div>
         </div>
 
@@ -22,14 +29,14 @@ export const FoodCard = ({ card }) => {
             <img src={Costumer3} alt="costumer user photo" />
           </div>
           <span>
-            <img src={Star} /> ({card?.rating})
+            <img src={Star} /> ({card?.info?.avgRating})
           </span>
         </div>
 
         <div className="food-card__info">
-          <h3>{card?.name}</h3>
+          <h3>{card?.info?.name}</h3>
           <div className="paragra">
-            <p>{card?.description}</p>
+            <p>{card?.info?.cuisines.join(", ")}</p>
           </div>
         </div>
 

@@ -1,6 +1,5 @@
 import "./SearchBar.css";
 import SearchButtonSubmit from "../../assets/search-button-submit.svg";
-import { useState } from "react";
 
 export const SearchBar = ({ query, onSetQuery, onHandleTopRatedFood }) => {
   return (

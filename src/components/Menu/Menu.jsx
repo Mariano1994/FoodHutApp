@@ -24,7 +24,9 @@ export const Menu = ({ menu, query, onSetQuery, onHandleTopRatedFood }) => {
         />
         <div className="food-cards-container">
           {menu.length > 0 ? (
-            menu.map((men) => <FoodCard card={men} key={men.id} />).reverse()
+            menu
+              .map((men) => <FoodCard card={men} key={men?.info?.id} />)
+              .reverse()
           ) : (
             <NotFoundMessage />
           )}

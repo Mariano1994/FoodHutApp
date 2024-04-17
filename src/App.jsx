@@ -9,7 +9,7 @@ import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
 import { CardObjData } from "./utils/data";
 
 export const App = () => {
-  const [foodCards, setFoodCards] = useState(CardObjData);
+  const [foodCards, setFoodCards] = useState([]);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -18,7 +18,11 @@ export const App = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
-      console.log(json);
+
+      setFoodCards(
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
     }
 
     fetchData();
@@ -28,22 +32,22 @@ export const App = () => {
     setQuery(event.target.value);
   };
 
-  const filteredFood = foodCards.filter((foodCard) =>
-    foodCard.name.toLowerCase().includes(query.toLowerCase())
+  const filteredFood = foodCards?.filter((foodCard) =>
+    foodCard?.info?.name.toLowerCase().includes(query?.toLowerCase())
   );
 
   // Function to handle sort by top rationg
   const handlerTopRatedFood = () => {
     const topRated = foodCards
-      .filter((foodCard) => foodCard.rating > 4)
-      .sort((a, b) => a.rating - b.rating);
+      .filter((foodCard) => foodCard?.info?.avgRating > 4.2)
+      .sort((a, b) => a.info?.avgRating - b.info?.avgRating);
     setFoodCards(topRated);
   };
 
   return (
     <div className="app-container">
       <HeroSection />
-      <SpecialOffers cardsInfo={CardObjData} />
+      <SpecialOffers cardsInfo={foodCards} />
       <WhyFoodHut />
       <Menu
         menu={filteredFood}
