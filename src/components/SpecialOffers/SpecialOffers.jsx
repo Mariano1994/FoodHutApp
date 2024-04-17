@@ -23,7 +23,7 @@ export const SpecialOffers = ({ cardsInfo }) => {
 
       <div className="food-cards-container">
         {cardsInfo.map((card, index) => {
-          if (index <= 3) return <FoodCard card={card} key={card.id} />;
+          if (index <= 3) return <FoodCard card={card} key={card?.info?.id} />;
         })}
       </div>
 

@@ -6,14 +6,14 @@ import { Menu } from "./components/Menu/Menu";
 import { PopularFood } from "./components/PopularFood/PopularFood";
 import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
-import { CardObjData } from "./utils/data";
 
 export const App = () => {
   const [foodCards, setFoodCards] = useState([]);
   const [query, setQuery] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     async function fetchData() {
+      setIsLoading(true);
       const data = await fetch(
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
@@ -23,6 +23,8 @@ export const App = () => {
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
+
+      setIsLoading(false);
     }
 
     fetchData();
@@ -49,12 +51,17 @@ export const App = () => {
       <HeroSection />
       <SpecialOffers cardsInfo={foodCards} />
       <WhyFoodHut />
-      <Menu
-        menu={filteredFood}
-        onHandleTopRatedFood={handlerTopRatedFood}
-        query={query}
-        onSetQuery={handlerSetQuery}
-      />
+
+      {!isLoading ? (
+        <Menu
+          menu={filteredFood}
+          onHandleTopRatedFood={handlerTopRatedFood}
+          query={query}
+          onSetQuery={handlerSetQuery}
+        />
+      ) : (
+        <h3>Loading Foods...</h3>
+      )}
       <PopularFood />
       <Footer />
     </div>

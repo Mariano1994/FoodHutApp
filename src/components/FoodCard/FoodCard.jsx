@@ -6,7 +6,6 @@ import Star from "../../assets/star.svg";
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 
 export const FoodCard = ({ card }) => {
-  console.log(card.info?.costForTwo.split());
   return (
     <>
       <div className="food-card">
