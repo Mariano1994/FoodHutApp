@@ -1,0 +1,94 @@
+.shimmer-card {
+  width: 31rem;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(154, 154, 154, 0.8) 390%
+  );
+  border-radius: 25px;
+  padding: 3.3rem;
+}
+
+.paragra {
+  height: 20rem;
+}
+
+.shimmer__img {
+  border-radius: 50%;
+  margin-bottom: 8rem;
+  background-color: rgba(221, 221, 221, 0.3);
+  width: 15rem;
+  height: 15rem;
+}
+
+.shimmer__price {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(204, 204, 204, 0.6);
+  border: 3px solid #fff;
+  position: absolute;
+  margin-top: 10rem;
+  margin-left: 10rem;
+}
+
+.shimmer-testimonials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.shimmer-photo {
+  display: flex;
+}
+
+.shimmer-photo > span {
+  margin-top: -5rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: -1.5rem;
+  border: 2px solid #e5e5e5;
+  background-color: rgba(204, 204, 204, 0.6);
+}
+
+.shimmer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shimmer-paragra-1 {
+  height: 2rem;
+  width: 16rem;
+  border-radius: 3px;
+  background-color: rgba(204, 204, 204, 0.4);
+}
+.shimmer-paragra-2 {
+  height: 2rem;
+  width: 14rem;
+  align-self: flex-start;
+  border-radius: 3px;
+  background-color: rgba(204, 204, 204, 0.4);
+}
+
+.shimmer-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 12rem;
+  background-color: rgba(187, 187, 187, 0.9);
+  border-radius: 30px;
+  position: absolute;
+  margin-top: 44rem;
+}

@@ -1,9 +1,16 @@
 import { FoodCard } from "../FoodCard/FoodCard";
 import { NotFoundMessage } from "../NotFoundMessage/NotFoundMessage";
 import { SearchBar } from "../SearchBar/SearchBar";
+import { Shimmer } from "../Shimmer/Shimmer";
 import "./Menu.css";
 
-export const Menu = ({ menu, query, onSetQuery, onHandleTopRatedFood }) => {
+export const Menu = ({
+  menu,
+  query,
+  onSetQuery,
+  onHandleTopRatedFood,
+  isLoading,
+}) => {
   return (
     <>
       <div className="foodhut-menu">
@@ -22,15 +29,19 @@ export const Menu = ({ menu, query, onSetQuery, onHandleTopRatedFood }) => {
           onSetQuery={onSetQuery}
           onHandleTopRatedFood={onHandleTopRatedFood}
         />
-        <div className="food-cards-container">
-          {menu.length > 0 ? (
-            menu
-              .map((men) => <FoodCard card={men} key={men?.info?.id} />)
-              .reverse()
-          ) : (
-            <NotFoundMessage />
-          )}
-        </div>
+        {!isLoading ? (
+          <div className="food-cards-container">
+            {menu.length > 0 ? (
+              menu
+                .map((men) => <FoodCard card={men} key={men?.info?.id} />)
+                .reverse()
+            ) : (
+              <NotFoundMessage />
+            )}
+          </div>
+        ) : (
+          <Shimmer />
+        )}
       </div>
     </>
   );

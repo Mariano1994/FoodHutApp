@@ -2,7 +2,7 @@ import "./SpecialOffers.css";
 import Detail from "../../assets/detail.svg";
 import Rose from "../../assets/rosemary.svg";
 import { FoodCard } from "../FoodCard/FoodCard";
-import { LoadingMessage } from "../LoadingMessage/LoadingMessage";
+import { Shimmer } from "../Shimmer/Shimmer";
 
 export const SpecialOffers = ({ cardsInfo, isLoading }) => {
   return (
@@ -29,7 +29,7 @@ export const SpecialOffers = ({ cardsInfo, isLoading }) => {
               return <FoodCard card={card} key={card?.info?.id} />;
           })
         ) : (
-          <LoadingMessage />
+          <Shimmer />
         )}
       </div>
 

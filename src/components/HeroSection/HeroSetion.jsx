@@ -30,8 +30,8 @@ export const HeroSection = () => {
                 {" "}
                 <span className="text-black">We're</span>{" "}
                 <span className="text-red"> Serious</span>{" "}
-                <span className="text-black">For</span>{" "}
-                <span className="text-red">Food</span>{" "}
+                <span className="text-black">For</span>
+                <br /> <span className="text-red">Food</span>{" "}
                 <span className="text-black">&</span>{" "}
                 <span className="text-yellow">Delivery</span>
                 <span className="text-black">.</span>

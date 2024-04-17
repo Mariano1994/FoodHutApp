@@ -1,0 +1,10 @@
+.shimmer-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 8rem; */
+  gap: 2rem;
+}

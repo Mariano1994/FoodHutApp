@@ -6,12 +6,13 @@ import { Menu } from "./components/Menu/Menu";
 import { PopularFood } from "./components/PopularFood/PopularFood";
 import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
-import { LoadingMessage } from "./components/LoadingMessage/LoadingMessage";
 
 export const App = () => {
   const [foodCards, setFoodCards] = useState([]);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // FETCHING DATA FORM SWIGGY API
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
@@ -35,6 +36,7 @@ export const App = () => {
     setQuery(event.target.value);
   };
 
+  // Function to filter top rated foods
   const filteredFood = foodCards?.filter((foodCard) =>
     foodCard?.info?.name.toLowerCase().includes(query?.toLowerCase())
   );
@@ -51,18 +53,17 @@ export const App = () => {
     <div className="app-container">
       <HeroSection />
       <SpecialOffers cardsInfo={foodCards} isLoading={isLoading} />
+
       <WhyFoodHut />
 
-      {!isLoading ? (
-        <Menu
-          menu={filteredFood}
-          onHandleTopRatedFood={handlerTopRatedFood}
-          query={query}
-          onSetQuery={handlerSetQuery}
-        />
-      ) : (
-        <LoadingMessage />
-      )}
+      <Menu
+        menu={filteredFood}
+        onHandleTopRatedFood={handlerTopRatedFood}
+        query={query}
+        onSetQuery={handlerSetQuery}
+        isLoading={isLoading}
+      />
+
       <PopularFood />
       <Footer />
     </div>
