@@ -21,3 +21,17 @@ ul a {
   font-weight: 400;
   color: #191919;
 }
+
+.login-buttom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 9rem;
+  height: 3.9rem;
+  background-color: #f54748;
+  color: #e5e5e5;
+  border-radius: 10px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}

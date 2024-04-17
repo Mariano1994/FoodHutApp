@@ -1,6 +1,15 @@
 import "./Header.css";
 import ImageLogo from "../../assets/Logo.svg";
+import { useState } from "react";
+import { ShoppingCart } from "lucide-react";
+
 export const Header = () => {
+  const [isLoing, setIsLogin] = useState(false);
+
+  const handlerLogin = () => {
+    setIsLogin((log) => !log);
+  };
+
   return (
     <>
       <header className="header">
@@ -27,11 +36,11 @@ export const Header = () => {
             </a>
 
             <a href="#">
-              <li> Our Popular Menu</li>
+              <ShoppingCart color="#191919" />
             </a>
 
-            <a href="#">
-              <li> Cart</li>
+            <a href="#" className="login-buttom" onClick={handlerLogin}>
+              {isLoing ? "Login" : "Logout"}
             </a>
           </ul>
         </nav>
