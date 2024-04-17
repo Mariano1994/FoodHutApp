@@ -2,8 +2,9 @@ import "./SpecialOffers.css";
 import Detail from "../../assets/detail.svg";
 import Rose from "../../assets/rosemary.svg";
 import { FoodCard } from "../FoodCard/FoodCard";
+import { LoadingMessage } from "../LoadingMessage/LoadingMessage";
 
-export const SpecialOffers = ({ cardsInfo }) => {
+export const SpecialOffers = ({ cardsInfo, isLoading }) => {
   return (
     <>
       <div className="special-offers">
@@ -22,9 +23,14 @@ export const SpecialOffers = ({ cardsInfo }) => {
       </div>
 
       <div className="food-cards-container">
-        {cardsInfo.map((card, index) => {
-          if (index <= 3) return <FoodCard card={card} key={card?.info?.id} />;
-        })}
+        {!isLoading ? (
+          cardsInfo.map((card, index) => {
+            if (index <= 3)
+              return <FoodCard card={card} key={card?.info?.id} />;
+          })
+        ) : (
+          <LoadingMessage />
+        )}
       </div>
 
       <div className="rose">

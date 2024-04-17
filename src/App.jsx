@@ -6,6 +6,7 @@ import { Menu } from "./components/Menu/Menu";
 import { PopularFood } from "./components/PopularFood/PopularFood";
 import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
+import { LoadingMessage } from "./components/LoadingMessage/LoadingMessage";
 
 export const App = () => {
   const [foodCards, setFoodCards] = useState([]);
@@ -49,7 +50,7 @@ export const App = () => {
   return (
     <div className="app-container">
       <HeroSection />
-      <SpecialOffers cardsInfo={foodCards} />
+      <SpecialOffers cardsInfo={foodCards} isLoading={isLoading} />
       <WhyFoodHut />
 
       {!isLoading ? (
@@ -60,7 +61,7 @@ export const App = () => {
           onSetQuery={handlerSetQuery}
         />
       ) : (
-        <h3>Loading Foods...</h3>
+        <LoadingMessage />
       )}
       <PopularFood />
       <Footer />
