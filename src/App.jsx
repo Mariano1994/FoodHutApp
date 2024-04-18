@@ -6,7 +6,6 @@ import { Menu } from "./components/Menu/Menu";
 import { PopularFood } from "./components/PopularFood/PopularFood";
 import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
-import { createBrowserRouter } from "react-router-dom";
 
 export const App = () => {
   const [foodCards, setFoodCards] = useState([]);

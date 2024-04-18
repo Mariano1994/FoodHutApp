@@ -1,0 +1,30 @@
+.error {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.error-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.error-info h1 {
+  font-size: 12rem;
+  color: #f54748;
+}
+.error-info h2 {
+  font-size: 3rem;
+}
+
+/* 
+Colors
+black => #191919;
+red => #f54748;
+Yellow => #FDC55E
+White => #E5E5E5
+*/
