@@ -7,7 +7,7 @@ import CalendarIcon from "../../assets/calendar-icon.svg";
 export const WhyFoodHut = () => {
   return (
     <>
-      <div className="why-foodhut__container">
+      <div className="why-foodhut__container" id="why-food__hut">
         <div className="why-foodhut__img">
           <img src={Boss} alt="" />
         </div>

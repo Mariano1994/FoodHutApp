@@ -7,7 +7,7 @@ import Foods from "../../assets/food.svg";
 export const PopularFood = () => {
   return (
     <>
-      <div className="wrap">
+      <div className="wrap" id="app">
         <section className="popular-food__container">
           <div className="popular-food__info">
             <div className="popular-food__title">

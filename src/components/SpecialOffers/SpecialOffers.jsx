@@ -7,7 +7,7 @@ import { Shimmer } from "../Shimmer/Shimmer";
 export const SpecialOffers = ({ cardsInfo, isLoading }) => {
   return (
     <>
-      <div className="special-offers">
+      <div className="special-offers" id="espical-offers">
         <h2 className="special-offers__title">
           Today <span className="text-red">Special</span> Offers
         </h2>

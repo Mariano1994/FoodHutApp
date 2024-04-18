@@ -23,15 +23,15 @@ export const Header = () => {
 
         <nav className="nav-menu">
           <ul className="menu-items">
-            <a href="#">
+            <a href="#espical-offers">
               <li> Today Especial Offers</li>
             </a>
 
-            <a href="#">
+            <a href="#why-food__hut">
               <li> Why FoodHut</li>
             </a>
 
-            <a href="#">
+            <a href="#menu">
               <li> Our Menu</li>
             </a>
 

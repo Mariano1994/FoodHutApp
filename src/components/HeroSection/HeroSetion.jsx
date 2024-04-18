@@ -70,7 +70,9 @@ export const HeroSection = () => {
         </div>
 
         <div className="keep-in__touch">
-          <button className="app">Download App</button>
+          <button className="app" id="#app">
+            Download App
+          </button>
           <div className="watch">
             <img src={PlayButton} />
             <span>Watch Video</span>

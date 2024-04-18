@@ -13,7 +13,7 @@ export const Menu = ({
 }) => {
   return (
     <>
-      <div className="foodhut-menu">
+      <div className="foodhut-menu" id="menu">
         <div className="foodhut-menu__title">
           <h2>
             {" "}
