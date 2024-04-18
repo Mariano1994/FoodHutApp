@@ -24,7 +24,7 @@ export const SpecialOffers = ({ cardsInfo, isLoading }) => {
 
       <div className="food-cards-container">
         {!isLoading ? (
-          cardsInfo.map((card, index) => {
+          cardsInfo?.map((card, index) => {
             if (index <= 3)
               return <FoodCard card={card} key={card?.info?.id} />;
           })

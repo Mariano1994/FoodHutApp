@@ -6,18 +6,14 @@ import Star from "../../assets/star.svg";
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 
 export const FoodCard = ({ card }) => {
+  const { avgRating, cloudinaryImageId, name, cuisines } = card?.info;
   return (
     <>
       <div className="food-card">
         <div className="food-card__img">
-          <img src={`${BASE_IMAGE_URL}${card?.info?.cloudinaryImageId}`} />
+          <img src={`${BASE_IMAGE_URL}${cloudinaryImageId}`} />
           <div className="food-card__price">
-            <span>
-              $
-              {card?.info?.avgRating > 4
-                ? card?.info?.avgRating * 5
-                : card?.info?.avgRating * 7}
-            </span>
+            <span>${avgRating > 4 ? avgRating * 5 : avgRating * 7}</span>
           </div>
         </div>
 
@@ -28,14 +24,14 @@ export const FoodCard = ({ card }) => {
             <img src={Costumer3} alt="costumer user photo" />
           </div>
           <span>
-            <img src={Star} /> ({card?.info?.avgRating})
+            <img src={Star} /> ({avgRating})
           </span>
         </div>
 
         <div className="food-card__info">
-          <h3>{card?.info?.name}</h3>
+          <h3>{name}</h3>
           <div className="paragra">
-            <p>{card?.info?.cuisines.join(", ")}</p>
+            <p>{cuisines.join(", ")}</p>
           </div>
         </div>
 
