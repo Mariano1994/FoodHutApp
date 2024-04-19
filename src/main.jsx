@@ -6,6 +6,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Cart } from "./components/Cart/Cart.jsx";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage.jsx";
+import { RestaurantMenu } from "./components/RestaurantMenu/RestaurantMenu.jsx";
 
 const appRoutes = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const appRoutes = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/restaurants/:resTd",
+    element: <RestaurantMenu />,
   },
 ]);
 
