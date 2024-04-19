@@ -2,6 +2,7 @@ import "./Header.css";
 import ImageLogo from "../../assets/Logo.svg";
 import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isLoing, setIsLogin] = useState(false);
@@ -13,13 +14,13 @@ export const Header = () => {
   return (
     <>
       <header className="header">
-        <div className="image-logo">
+        <Link to="/" className="image-logo">
           <img
             src={ImageLogo}
             alt="logo image from the company"
             className="logo"
           />
-        </div>
+        </Link>
 
         <nav className="nav-menu">
           <ul className="menu-items">
@@ -35,9 +36,9 @@ export const Header = () => {
               <li> Our Menu</li>
             </a>
 
-            <a href="#">
+            <Link to="/cart">
               <ShoppingCart color="#191919" />
-            </a>
+            </Link>
 
             <a href="#" className="login-buttom" onClick={handlerLogin}>
               {isLoing ? "Login" : "Logout"}

@@ -17,10 +17,6 @@ const appRoutes = createBrowserRouter([
     path: "/cart",
     element: <Cart />,
   },
-  // {
-  //   path: "*",
-  //   element: <ErrorMessage />,
-  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

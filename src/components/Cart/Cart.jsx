@@ -1,5 +1,10 @@
 import "./Cart.css";
+import { Header } from "../Header/Header";
 
 export const Cart = () => {
-  return <h2>Welocme to your Cart</h2>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };

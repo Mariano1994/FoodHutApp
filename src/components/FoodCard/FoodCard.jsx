@@ -4,9 +4,11 @@ import Costumer2 from "../../assets/costumersPhoto/2.jpg";
 import Costumer3 from "../../assets/costumersPhoto/3.jpg";
 import Star from "../../assets/star.svg";
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
+import { Truck, Dot } from "lucide-react";
 
 export const FoodCard = ({ card }) => {
-  const { avgRating, cloudinaryImageId, name, cuisines } = card?.info;
+  const { avgRating, cloudinaryImageId, name, cuisines, sla, isOpen } =
+    card?.info;
   return (
     <>
       <div className="food-card">
@@ -30,12 +32,18 @@ export const FoodCard = ({ card }) => {
 
         <div className="food-card__info">
           <h3>{name}</h3>
+          <div>
+            <span className="delivery">
+              <Truck color="#191919" size={22} /> <Dot size={22} />
+              {sla.deliveryTime}min
+            </span>
+          </div>
           <div className="paragra">
             <p>{cuisines.join(", ")}</p>
           </div>
         </div>
 
-        <a href="#"> Order Now</a>
+        {/* <a href="#"> See all Options</a> */}
       </div>
     </>
   );

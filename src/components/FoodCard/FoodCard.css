@@ -105,6 +105,11 @@
   color: #f54748;
 }
 
+.delivery {
+  display: flex;
+  align-items: center;
+}
+
 .food-card__info p {
   text-align: center;
   font-size: 1.5rem;
