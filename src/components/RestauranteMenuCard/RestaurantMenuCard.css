@@ -1,0 +1,35 @@
+.rest_card {
+  display: flex;
+  margin-top: 8rem;
+  align-items: center;
+  gap: 10rem;
+  margin-top: -0.1rem;
+}
+.rest-card_info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+.rest-card_info h2 {
+  font-size: 1.8rem;
+}
+.rest-card_info span {
+  font-size: 1.8rem;
+}
+
+.rest-card_info p {
+  font-size: 1.5rem;
+}
+
+.rest-card_img img {
+  width: 22rem;
+  height: 18rem;
+  border-radius: 8px;
+}
+
+.rest-card_info span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
