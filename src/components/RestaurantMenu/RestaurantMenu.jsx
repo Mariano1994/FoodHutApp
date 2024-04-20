@@ -6,8 +6,8 @@ import { SearchBar } from "../SearchBar/SearchBar";
 import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
 import { Divider } from "../Divider/Divider";
 import { MapPin, Star, CircleDollarSign } from "lucide-react";
-import { useParams } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, MoveLeft } from "lucide-react";
 export const RestaurantMenu = () => {
   const { resId } = useParams();
   const [restInfo, setRestInfo] = useState(null);
@@ -34,14 +34,9 @@ export const RestaurantMenu = () => {
     locality,
   } = restInfo?.data?.cards[2]?.card?.card?.info;
 
-  const Data =
-    restInfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
-
-  console.log(Data);
-
   const { itemCards } =
     restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card || Data;
+      ?.card;
 
   console.log(itemCards);
 
@@ -50,6 +45,9 @@ export const RestaurantMenu = () => {
   return (
     <>
       <div className="wrap">
+        <Link to="/" className="back_home">
+          <ArrowLeft size={15} /> Home
+        </Link>
         <div className="rest-wrap">
           <div className="rest-conteiner">
             <div className="rest_title">
