@@ -26,6 +26,7 @@ export const RestaurantMenuCard = ({ card }) => {
             {description ||
               "Lorem ipsum dolor, sit amet consectetur adipisicingelit. Pariatur, eius minus! Magnam velit officia nam sapiente sed.Numquam reprehenderit id dolore magni, atque accusamus"}
           </p>
+          <span className="food-price">Rs {price / 100 || "N/A"}</span>
         </div>
         <div className="rest-card_img">{<img src={image} />}</div>
       </div>
