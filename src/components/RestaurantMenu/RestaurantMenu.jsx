@@ -8,25 +8,28 @@ import { SearchBar } from "../SearchBar/SearchBar";
 import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
 import { Divider } from "../Divider/Divider";
 import { MapPin, Star, CircleDollarSign } from "lucide-react";
+import { useParams } from "react-router-dom";
 
 export const RestaurantMenu = () => {
+  const { resId } = useParams();
   const [restInfo, setRestInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getMenuData() {
       setIsLoading(true);
-      const data = await fetch(MENU_URL);
+      const data = await fetch(`${MENU_URL}${resId}`);
       const json = await data.json();
 
-      console.log(json);
       setRestInfo(json);
       setIsLoading(false);
     }
 
     getMenuData();
   }, []);
+
   if (restInfo === null) return <Shimmer />;
+
   const {
     name,
     avgRating,
@@ -67,7 +70,10 @@ export const RestaurantMenu = () => {
           <Divider />
 
           {itemCards.map((itemCard) => (
-            <RestaurantMenuCard key={itemCard.id} card={itemCard} />
+            <RestaurantMenuCard
+              key={itemCard?.card?.card?.info?.id}
+              card={itemCard}
+            />
           ))}
         </div>
       </div>
