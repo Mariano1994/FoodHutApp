@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FoodCard } from "../FoodCard/FoodCard";
 import { NotFoundMessage } from "../NotFoundMessage/NotFoundMessage";
 import { SearchBar } from "../SearchBar/SearchBar";
@@ -33,7 +34,15 @@ export const Menu = ({
           <div className="food-cards-container">
             {menu.length > 0 ? (
               menu
-                .map((men) => <FoodCard card={men} key={men?.info?.id} />)
+                .map((men) => (
+                  <Link
+                    to={`/restaurants/${men?.info?.id}`}
+                    key={men?.info?.id}
+                  >
+                    {" "}
+                    <FoodCard card={men} />
+                  </Link>
+                ))
                 .reverse()
             ) : (
               <NotFoundMessage />

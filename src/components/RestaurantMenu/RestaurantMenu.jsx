@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import "./RestaurantMenu.css";
 import { MENU_URL } from "../../utils/ConstURLs";
 import { Shimmer } from "../Shimmer/Shimmer";
-
 import { SearchBar } from "../SearchBar/SearchBar";
-
 import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
 import { Divider } from "../Divider/Divider";
 import { MapPin, Star, CircleDollarSign } from "lucide-react";
@@ -13,20 +11,17 @@ import { useParams } from "react-router-dom";
 export const RestaurantMenu = () => {
   const { resId } = useParams();
   const [restInfo, setRestInfo] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getMenuData() {
-      setIsLoading(true);
       const data = await fetch(`${MENU_URL}${resId}`);
       const json = await data.json();
 
       setRestInfo(json);
-      setIsLoading(false);
     }
 
     getMenuData();
-  }, []);
+  }, [MENU_URL, resId]);
 
   if (restInfo === null) return <Shimmer />;
 
@@ -39,9 +34,18 @@ export const RestaurantMenu = () => {
     locality,
   } = restInfo?.data?.cards[2]?.card?.card?.info;
 
+  const Data =
+    restInfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+
+  console.log(Data);
+
   const { itemCards } =
     restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card;
+      ?.card || Data;
+
+  console.log(itemCards);
+
+  if (itemCards === undefined) return <h1>MENU NOT AVALAIBLE</h1>;
 
   return (
     <>
@@ -71,7 +75,7 @@ export const RestaurantMenu = () => {
 
           {itemCards.map((itemCard) => (
             <RestaurantMenuCard
-              key={itemCard?.card?.card?.info?.id}
+              key={itemCard?.card?.info?.id}
               card={itemCard}
             />
           ))}

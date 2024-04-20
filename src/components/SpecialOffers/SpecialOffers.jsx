@@ -3,6 +3,7 @@ import Detail from "../../assets/detail.svg";
 import Rose from "../../assets/rosemary.svg";
 import { FoodCard } from "../FoodCard/FoodCard";
 import { Shimmer } from "../Shimmer/Shimmer";
+import { Link } from "react-router-dom";
 
 export const SpecialOffers = ({ cardsInfo, isLoading }) => {
   return (
@@ -26,7 +27,12 @@ export const SpecialOffers = ({ cardsInfo, isLoading }) => {
         {!isLoading ? (
           cardsInfo?.map((card, index) => {
             if (index <= 3)
-              return <FoodCard card={card} key={card?.info?.id} />;
+              return (
+                <Link to={`/restaurants/${card?.info?.id}`}>
+                  {" "}
+                  <FoodCard card={card} key={card?.info?.id} />
+                </Link>
+              );
           })
         ) : (
           <Shimmer />
