@@ -8,6 +8,7 @@ import { Divider } from "../Divider/Divider";
 import { MapPin, Star, CircleDollarSign } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, MoveLeft } from "lucide-react";
+import { MenuCardShimmer } from "../MenuCardShimmer/MenuCardShimmer";
 export const RestaurantMenu = () => {
   const { resId } = useParams();
   const [restInfo, setRestInfo] = useState(null);
@@ -23,7 +24,7 @@ export const RestaurantMenu = () => {
     getMenuData();
   }, [MENU_URL, resId]);
 
-  if (restInfo === null) return <Shimmer />;
+  if (restInfo === null) return <MenuCardShimmer />;
 
   const {
     name,
@@ -37,8 +38,6 @@ export const RestaurantMenu = () => {
   const { itemCards } =
     restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
-
-  console.log(itemCards);
 
   if (itemCards === undefined) return <h1>MENU NOT AVALAIBLE</h1>;
 
