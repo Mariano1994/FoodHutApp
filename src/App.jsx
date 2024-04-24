@@ -12,6 +12,8 @@ export const App = () => {
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // const foodCards = useResturant();
+
   // FETCHING DATA FORM SWIGGY API
   useEffect(() => {
     async function fetchData() {

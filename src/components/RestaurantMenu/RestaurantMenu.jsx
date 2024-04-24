@@ -10,7 +10,6 @@ import useRestaurantMenu from "../../utils/hooks/useRestaurantMenu";
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
-
   const restInfo = useRestaurantMenu(resId);
 
   if (restInfo === null) return <MenuCardShimmer />;
