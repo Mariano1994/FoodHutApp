@@ -28,9 +28,12 @@ export const SpecialOffers = ({ cardsInfo, isLoading }) => {
           cardsInfo?.map((card, index) => {
             if (index <= 3)
               return (
-                <Link to={`/restaurants/${card?.info?.id}`}>
+                <Link
+                  to={`/restaurants/${card?.info?.id}`}
+                  key={card?.info?.id}
+                >
                   {" "}
-                  <FoodCard card={card} key={card?.info?.id} />
+                  <FoodCard card={card} />
                 </Link>
               );
           })

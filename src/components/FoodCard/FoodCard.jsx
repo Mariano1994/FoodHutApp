@@ -41,9 +41,8 @@ export const FoodCard = ({ card }) => {
           <div className="paragra">
             <p>{cuisines.join(", ")}</p>
           </div>
+          <span className="full-menu">See full menu</span>
         </div>
-
-        {/* <a href="#"> See all Options</a> */}
       </div>
     </>
   );

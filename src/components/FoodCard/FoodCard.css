@@ -129,6 +129,15 @@
   margin-top: 44rem;
 }
 
+.full-menu {
+  position: absolute;
+  margin-top: 20rem;
+  opacity: 0;
+}
+
+.full-menu:hover {
+  opacity: 1;
+}
 /* 
 Colors
 black => #191919;
