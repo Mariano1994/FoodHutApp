@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import "./RestaurantMenu.css";
-import { MENU_URL } from "../../utils/ConstURLs";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
 import { Divider } from "../Divider/Divider";
@@ -8,21 +6,12 @@ import { MapPin, Star, CircleDollarSign } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, MoveLeft } from "lucide-react";
 import { MenuCardShimmer } from "../MenuCardShimmer/MenuCardShimmer";
+import useRestaurantMenu from "../../utils/hooks/useRestaurantMenu";
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [restInfo, setRestInfo] = useState(null);
 
-  useEffect(() => {
-    async function getMenuData() {
-      const data = await fetch(`${MENU_URL}${resId}`);
-      const json = await data.json();
-
-      setRestInfo(json);
-    }
-
-    getMenuData();
-  }, [MENU_URL, resId]);
+  const restInfo = useRestaurantMenu(resId);
 
   if (restInfo === null) return <MenuCardShimmer />;
 
