@@ -3,3 +3,10 @@
   width: 100%;
   height: 100vh;
 }
+.online-status {
+  margin-top: 3rem;
+  color: #f54748;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+}

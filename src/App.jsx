@@ -6,6 +6,8 @@ import { Menu } from "./components/Menu/Menu";
 import { PopularFood } from "./components/PopularFood/PopularFood";
 import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
+import useOnlineStatus from "./utils/hooks/useOnlineStatus";
+import { Shimmer } from "./components/Shimmer/Shimmer";
 
 export const App = () => {
   const [foodCards, setFoodCards] = useState([]);
@@ -50,6 +52,19 @@ export const App = () => {
       .sort((a, b) => a.info?.avgRating - b.info?.avgRating);
     setFoodCards(topRated);
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (!onlineStatus) {
+    return (
+      <>
+        <span className="online-status">
+          Looks like you're offline. Please check your internet connection.
+        </span>
+        <Shimmer />
+      </>
+    );
+  }
 
   return (
     <div className="app-container">
