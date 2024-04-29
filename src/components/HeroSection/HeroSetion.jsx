@@ -17,42 +17,39 @@ import { Header } from "../Header/Header";
 export const HeroSection = () => {
   return (
     <>
-      <div className="hero-wrapper">
+      <div className="hero-wrapper h-screen w-screen bg-alt">
         <Header />
-        <div className="hero-section__content">
-          <div className="hero-section__info">
-            <span className="hero-trust">
+        <div className=" flex justify-between items-center">
+          <div className=" flex flex-col gap-6 ml-28">
+            <span className="flex justify-center gap-[1.8rem] text-lg items-center py-2 w-1/6 bg-gradient rounded-[15px] text-base ">
               <img src={HeartIcon} /> People Trust us
             </span>
 
             <div className="hero-section__title">
-              <p>
+              <p className=" text-[8rem]  font-extrabold">
                 {" "}
-                <span className="text-black">We're</span>{" "}
-                <span className="text-red"> Serious</span>{" "}
-                <span className="text-black">For</span>
-                <br /> <span className="text-red">Food</span>{" "}
-                <span className="text-black">&</span>{" "}
-                <span className="text-yellow">Delivery</span>
-                <span className="text-black">.</span>
+                We're
+                <span className="text-primary"> Serious</span> For
+                <br /> <span className="text-primary">Food</span> &
+                <span className="text-secondary"> Delivery</span>.
               </p>
-              <img src={Decore} />
+              <img src={Decore} className="ml-[30rem] absolute -mt-[2rem]" />
             </div>
 
-            <div className="hero-section__paragrath">
-              <p>
+            <div className=" w-[60%]">
+              <p className="text-[2.3rem] mb-40">
                 Best cooks and best delivery guys all at your service. Hot tasty
                 food will reach you in 60 minutes.
               </p>
             </div>
           </div>
 
-          <div className="hero-section__img">
-            <img src={HeroImage} alt="" />
+          <div>
+            <img src={HeroImage} alt="" className="w-[80rem] h-[67rem]" />
           </div>
         </div>
 
-        <div className="costumers-trust">
+        <div className="flex items-center gap-[1rem] ml-[7.8rem] -mt-[16rem]">
           <div className="costumers-trust__photo">
             <img src={Costumer1} alt="costumer user photo" />
             <img src={Costumer2} alt="costumer user photo" />

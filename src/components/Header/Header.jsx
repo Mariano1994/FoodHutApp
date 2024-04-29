@@ -1,4 +1,3 @@
-import "./Header.css";
 import ImageLogo from "../../assets/Logo.svg";
 import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
@@ -13,26 +12,22 @@ export const Header = () => {
 
   return (
     <>
-      <header className="header">
-        <Link to="/" className="image-logo">
-          <img
-            src={ImageLogo}
-            alt="logo image from the company"
-            className="logo"
-          />
+      <header className=" flex content-between items-center w-full py-16 px-28 gap-[68rem]">
+        <Link to="/" className=" w-48">
+          <img src={ImageLogo} alt="logo image from the company" />
         </Link>
 
-        <nav className="nav-menu">
-          <ul className="menu-items">
-            <a href="#espical-offers">
+        <nav>
+          <ul className="flex gap-16 items-center justify-between">
+            <a href="#espical-offers" className=" text-3xl font-[400]">
               <li> Today Especial Offers</li>
             </a>
 
-            <a href="#why-food__hut">
+            <a href="#why-food__hut" className=" text-3xl font-[400]">
               <li> Why FoodHut</li>
             </a>
 
-            <a href="#menu">
+            <a href="#menu" className=" text-3xl font-[400]">
               <li> Our Menu</li>
             </a>
 
@@ -40,7 +35,11 @@ export const Header = () => {
               <ShoppingCart color="#191919" />
             </Link>
 
-            <a href="#" className="login-buttom" onClick={handlerLogin}>
+            <a
+              href="#"
+              className="flex items-center justify-center w-36 h-14 bg-primary text-alt  rounded-[10px]  left-8 right-12"
+              onClick={handlerLogin}
+            >
               {isLoing ? "Login" : "Logout"}
             </a>
           </ul>
