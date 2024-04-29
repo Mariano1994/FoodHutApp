@@ -26,7 +26,7 @@ export const App = () => {
       const json = await data.json();
 
       setFoodCards(
-        json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
 
