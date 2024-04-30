@@ -7,41 +7,58 @@ import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { Truck, Dot } from "lucide-react";
 
 export const FoodCard = ({ card }) => {
+  console.log(card?.info);
   const { avgRating, cloudinaryImageId, name, cuisines, sla, isOpen } =
     card?.info;
   return (
     <>
-      <div className="food-card">
-        <div className="food-card__img">
-          <img src={`${BASE_IMAGE_URL}${cloudinaryImageId}`} />
-          <div className="food-card__price">
-            <span>${avgRating > 4 ? avgRating * 5 : avgRating * 7}</span>
+      <div className=" w-[31rem] h-[45rem] flex flex-col items-center justify-center gap-8 mt-[11rem] rounded-[25px] p-[3.3rem] cursor-pointer hover:scale-90 transition-all food-card ">
+        <div className=" rounded-[50%] mb-8">
+          <img
+            src={`${BASE_IMAGE_URL}${cloudinaryImageId}`}
+            className="w-[18rem] h-[18rem] border-solid rounded-[50%]"
+          />
+          <div className="w-[48px] h-[48px]  rounded-[50%] bg-secondary border-solid border-[white] flex justify-center items-center absolute -mt-[5.3rem] ml-[12rem] border-[3px]">
+            <span className="flex justify-center items-center text-[1.7rem] font-medium">
+              ${Math.round(avgRating > 4 ? avgRating * 5 : avgRating * 7)}
+            </span>
           </div>
         </div>
 
-        <div className="food-testimonials">
-          <div className="costumers-photo">
-            <img src={Costumer1} alt="costumer user photo" />
-            <img src={Costumer2} alt="costumer user photo" />
-            <img src={Costumer3} alt="costumer user photo" />
+        <div className="flex justify-center items-center gap-16">
+          <div className="flex w-[30px] h-[30px]">
+            <img
+              src={Costumer1}
+              alt="costumer user photo"
+              className="rounded-full -ml-[1.5rem] border-solid border-alt border-[2px]"
+            />
+            <img
+              src={Costumer2}
+              alt="costumer user photo"
+              className="rounded-full -ml-[1.5rem] border-solid border-alt border-[2px]"
+            />
+            <img
+              src={Costumer3}
+              alt="costumer user photo"
+              className="rounded-full -ml-[1.5rem] border-solid border-alt border-[2px]"
+            />
           </div>
-          <span>
+          <span className="flex items-center font-semibold gap-2">
             <img src={Star} /> ({avgRating})
           </span>
         </div>
 
-        <div className="food-card__info">
-          <h3>{name}</h3>
+        <div className="flex flex-col items-center gap-8">
+          <h3 className=" text-center text-8 text-primary">{name}</h3>
           <div>
-            <span className="delivery">
+            <span className=" flex items-center">
               <Truck color="#191919" size={22} /> <Dot size={22} />
               {sla.deliveryTime}min
             </span>
           </div>
-          <div className="paragra">
+          <div className="text-center text-[1.5rem] font-light mb-32">
             <p>{cuisines.join(", ")}</p>
           </div>
-          <span className="full-menu">See full menu</span>
         </div>
       </div>
     </>
