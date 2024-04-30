@@ -49,34 +49,65 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-[1rem] ml-[7.8rem] -mt-[16rem]">
-          <div className="costumers-trust__photo">
-            <img src={Costumer1} alt="costumer user photo" />
-            <img src={Costumer2} alt="costumer user photo" />
-            <img src={Costumer3} alt="costumer user photo" />
-            <img src={Costumer4} alt="costumer user photo" />
-            <img src={Costumer5} alt="costumer user photo" />
-            <img src={Costumer6} alt="costumer user photo" />
-            <img src={Costumer7} alt="costumer user photo" />
+        <div className="flex items-center gap-[20rem] ml-[7.8rem] -mt-[16rem] ">
+          <div className="flex w-[5.5rem] h-[5.5rem]">
+            <img
+              src={Costumer1}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px] "
+            />
+            <img
+              src={Costumer2}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px] "
+            />
+            <img
+              src={Costumer3}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px]"
+            />
+            <img
+              src={Costumer4}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px] "
+            />
+            <img
+              src={Costumer5}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px] "
+            />
+            <img
+              src={Costumer6}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px]"
+            />
+            <img
+              src={Costumer7}
+              alt="costumer user photo"
+              className=" rounded-full -ml-[2rem] border-alt border-solid border-[3px] "
+            />
           </div>
-          <span>
+          <span className=" text-[2rem] font-bold">
             {" "}
-            <span className="text-red">250,000+</span> meals{" "}
-            <span className="text-yellow">delivered </span>last year!
+            <span className="text-primary">250,000+</span> meals{" "}
+            <span className="text-secondary">delivered </span>last year!
           </span>
         </div>
 
-        <div className="keep-in__touch">
-          <button className="app" id="#app">
+        <div className="ml-[6rem] mt-[3.5rem] flex items-center">
+          <button
+            className=" flex justify-center items-center w-[16.2rem] h-[4.5rem] bg-primary text-alt rounded-[30px]"
+            id="#app"
+          >
             Download App
           </button>
-          <div className="watch">
-            <img src={PlayButton} />
+          <div className="flex items-center cursor-pointer">
+            <img src={PlayButton} className="mt-[2rem] w-[10rem]" />
             <span>Watch Video</span>
           </div>
         </div>
-        <div className="move-foward">
-          <img src={MoveFoward} />
+        <div className="ml-[4rem] flex">
+          <img src={MoveFoward} className="w-[5rem] h-[5rem]" />
         </div>
       </div>
     </>

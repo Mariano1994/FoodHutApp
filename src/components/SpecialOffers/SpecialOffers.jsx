@@ -1,4 +1,3 @@
-import "./SpecialOffers.css";
 import Detail from "../../assets/detail.svg";
 import Rose from "../../assets/rosemary.svg";
 import { FoodCard } from "../FoodCard/FoodCard";
@@ -8,22 +7,25 @@ import { Link } from "react-router-dom";
 export const SpecialOffers = ({ cardsInfo, isLoading }) => {
   return (
     <>
-      <div className="special-offers" id="espical-offers">
-        <h2 className="special-offers__title">
-          Today <span className="text-red">Special</span> Offers
+      <div
+        className="flex flex-col justify-center items-center gap-[1.5] mt-[9rem] "
+        id="espical-offers"
+      >
+        <h2 className="text-[4.8rem] font-bold">
+          Today <span className="text-primary">Special</span> Offers
         </h2>
-        <p className="special-offers__paragra">
+        <p className="w-[85.5rem] text-center leading-[3rem] text-[1.8rem] font-light mb-[14rem] mt-10">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s
         </p>
       </div>
 
-      <div className="detail">
-        <img src={Detail} />
+      <div className="absolute overflow-hidden -mt-[8rem] -ml[2rem]">
+        <img src={Detail} className="w-[15rem]" />
       </div>
 
-      <div className="food-cards-container">
+      <div className="flex flex-wrap h-auto items-center justify-center gap-8 mx-28 mb-56">
         {!isLoading ? (
           cardsInfo?.map((card, index) => {
             if (index <= 3)
@@ -42,7 +44,7 @@ export const SpecialOffers = ({ cardsInfo, isLoading }) => {
         )}
       </div>
 
-      <div className="rose">
+      <div className="flex justify-end items-center -mr-40 -mt-32">
         <img src={Rose} />
       </div>
     </>
