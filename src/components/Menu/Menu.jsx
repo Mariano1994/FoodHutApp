@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FoodCard } from "../FoodCard/FoodCard";
+import { FoodCard, OpenStatusRestaurants } from "../FoodCard/FoodCard";
 import { NotFoundMessage } from "../NotFoundMessage/NotFoundMessage";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Shimmer } from "../Shimmer/Shimmer";
@@ -11,6 +11,8 @@ export const Menu = ({
   onHandleTopRatedFood,
   isLoading,
 }) => {
+  const OpenStatusRestaurant = OpenStatusRestaurants(FoodCard);
+
   return (
     <>
       <div className="flex flex-col items-center" id="menu">
@@ -37,7 +39,11 @@ export const Menu = ({
                     key={men?.info?.id}
                   >
                     {" "}
-                    <FoodCard card={men} />
+                    {!men.info.isOpen ? (
+                      <FoodCard card={men} />
+                    ) : (
+                      <OpenStatusRestaurant card={men} />
+                    )}
                   </Link>
                 ))
                 .reverse()

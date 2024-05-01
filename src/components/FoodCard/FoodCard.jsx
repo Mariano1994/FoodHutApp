@@ -7,7 +7,6 @@ import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { Truck, Dot } from "lucide-react";
 
 export const FoodCard = ({ card }) => {
-  console.log(card?.info);
   const { avgRating, cloudinaryImageId, name, cuisines, sla, isOpen } =
     card?.info;
   return (
@@ -63,4 +62,22 @@ export const FoodCard = ({ card }) => {
       </div>
     </>
   );
+};
+
+// HIGER-ORDER COMPONENT => HOC
+
+export const OpenStatusRestaurants = (FoodCard) => {
+  return ({ card }) => {
+    return (
+      <>
+        <div>
+          <label className=" absolute mt-[43.5rem] bg-secondary px-4 rounded-lg ml-[10.3rem]">
+            {" "}
+            Open now{" "}
+          </label>
+          <FoodCard card={card} />
+        </div>
+      </>
+    );
+  };
 };
