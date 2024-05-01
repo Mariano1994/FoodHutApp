@@ -1,29 +1,5 @@
-.shimmer-wrap {
-  display: grid;
-  place-content: center;
-  height: 100hv;
-}
-
-.shimmer-rest-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60vw;
-}
-
 .shimmer-back_home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 8rem;
-  height: 3rem;
-  margin-top: 8rem;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  /* background-color: rgba(221, 221, 221, 0.3); */
   background-color: rgba(187, 187, 187, 0.9);
-  border-radius: 5px;
-  font-size: 1.1rem;
 }
 
 .shimmer-rest_conteiner {

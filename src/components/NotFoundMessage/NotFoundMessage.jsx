@@ -1,13 +1,12 @@
-import "./NotFoundMessage.css";
 import searchIcon from "../../assets/search-icon.svg";
 
 export const NotFoundMessage = () => {
   return (
     <>
-      <div className="not-found__message">
+      <div className="flex flex-col items-center justify-center gpa-4 mb-20 mt-20">
         <img src={searchIcon} />
-        <span>
-          Food <span className="text-red">not</span> found
+        <span className=" text-[2rem] font-semibold">
+          Food <span className="text-primary">not</span> found
         </span>
       </div>
     </>
