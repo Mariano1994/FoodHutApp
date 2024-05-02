@@ -8,7 +8,7 @@ export const RestaurantMenuCard = ({ card }) => {
     <>
       <div className="flex flex-col w-full">
         {card.map((c) => (
-          <>
+          <div key={c.card.info.id}>
             <div className="flex justify-between items-center gap-[4rem] cursor-pointer transition-all hover:scale-105">
               <div className="flex flex-col gap-5 flex-1">
                 <h2 className="text-[1.8rem] font-medium">
@@ -20,7 +20,7 @@ export const RestaurantMenuCard = ({ card }) => {
                   <Star size={20} fill="#fdc55e" color="#fdc55e" />{" "}
                   {c.card.info.ratings?.aggregatedRating?.rating || "N/A"}
                 </span>
-                <p className=" text-[1.5rem]">
+                <p className=" text-[1.5rem] text-gray-500">
                   {c.card.info.description ||
                     "Lorem ipsum dolor, sit amet consectetur adipisicingelit. Pariatur, eius minus! Magnam velit officia nam sapiente sed.Numquam reprehenderit id dolore magni, atque accusamus"}
                 </p>
@@ -37,7 +37,7 @@ export const RestaurantMenuCard = ({ card }) => {
               </div>
             </div>
             <Divider />
-          </>
+          </div>
         ))}
       </div>
     </>

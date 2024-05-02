@@ -72,8 +72,8 @@ export const OpenStatusRestaurants = (FoodCard) => {
       <>
         <div>
           <label className=" absolute mt-[43.5rem] bg-secondary px-4 rounded-lg ml-[10.3rem]">
-            {" "}
-            Open now{" "}
+            {/* {" "}
+            Open now{" "} */}
           </label>
           <FoodCard card={card} />
         </div>

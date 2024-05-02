@@ -1,5 +1,4 @@
 import { SearchBar } from "../SearchBar/SearchBar";
-import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
 import { Divider } from "../Divider/Divider";
 import { MapPin, Star, CircleDollarSign } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
@@ -22,14 +21,6 @@ export const RestaurantMenu = () => {
     cuisines,
     locality,
   } = restInfo?.data?.cards[2]?.card?.card?.info;
-
-  // const { itemCards } =
-  //   restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-  //     ?.card;
-
-  // console.log(
-  //   restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-  // );
 
   const categories =
     restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -76,23 +67,12 @@ export const RestaurantMenu = () => {
           <SearchBar />
           <Divider />
 
-          {
-            categories.map((category) => (
-              <RestaurantCategory
-                category={category}
-                key={category.card.card.title}
-              />
-            ))
-
-            //
-          }
-
-          {/* {itemCards.map((itemCard) => (
-            <RestaurantMenuCard
-              key={itemCard?.card?.info?.id}
-              card={itemCard}
+          {categories.map((category) => (
+            <RestaurantCategory
+              category={category}
+              key={category.card.card.title}
             />
-          ))} */}
+          ))}
         </div>
       </div>
     </>

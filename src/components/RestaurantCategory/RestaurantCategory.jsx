@@ -1,35 +1,41 @@
-import { CircleArrowDown, CircleArrowUp } from "lucide-react";
+import {
+  CircleArrowDown,
+  CircleArrowUp,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { useState } from "react";
 import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
-import { Divider } from "../Divider/Divider";
 export const RestaurantCategory = ({ category }) => {
-  const { title, itemCards } = category?.card?.card;
-
-  // console.log(itemCards.map((item) => item.card.info));
-  const [expand, setExpand] = useState(true);
+  const [expandMenu, setExpandMenu] = useState(false);
 
   const handleExpand = () => {
-    setExpand((ex) => !ex);
+    setExpandMenu((ex) => !ex);
   };
   return (
     <>
       <div className="w-full mb-8  shadow-sm">
         <ul className="mb-4">
-          <li className=" flex justify-between items-center">
+          <li
+            className=" flex justify-between items-center cursor-pointer"
+            onClick={handleExpand}
+          >
             <h2 className=" font-bold text-2xl">{`${category?.card?.card?.title.toUpperCase()} (${
               category?.card?.card?.itemCards.length
             })`}</h2>
-            <div onClick={handleExpand}>
-              {expand ? (
-                <CircleArrowDown className=" cursor-pointer hover:text-primary" />
+            <div>
+              {!expandMenu ? (
+                <ChevronDown className=" hover:text-primary" />
               ) : (
-                <CircleArrowUp className=" cursor-pointer text-primary" />
+                <ChevronUp className="  text-primary" />
               )}
             </div>
           </li>
         </ul>
 
-        <RestaurantMenuCard card={category.card.card.itemCards} />
+        {expandMenu && (
+          <RestaurantMenuCard card={category.card.card.itemCards} />
+        )}
       </div>
     </>
   );
