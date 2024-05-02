@@ -6,10 +6,12 @@ import { ArrowLeft } from "lucide-react";
 import { MenuCardShimmer } from "../MenuCardShimmer/MenuCardShimmer";
 import useRestaurantMenu from "../../utils/hooks/useRestaurantMenu";
 import { RestaurantCategory } from "../RestaurantCategory/RestaurantCategory";
+import { useState } from "react";
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
   const restInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0);
 
   if (restInfo === null) return <MenuCardShimmer />;
 
@@ -67,10 +69,14 @@ export const RestaurantMenu = () => {
           <SearchBar />
           <Divider />
 
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <RestaurantCategory
               category={category}
               key={category.card.card.title}
+              expandMenu={index === showIndex ? true : false}
+              onExpandMenu={() => {
+                setShowIndex(index);
+              }}
             />
           ))}
         </div>

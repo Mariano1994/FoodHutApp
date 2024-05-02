@@ -1,24 +1,13 @@
-import {
-  CircleArrowDown,
-  CircleArrowUp,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
-import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { RestaurantMenuCard } from "../RestauranteMenuCard/RestauranteMenuCard";
-export const RestaurantCategory = ({ category }) => {
-  const [expandMenu, setExpandMenu] = useState(false);
-
-  const handleExpand = () => {
-    setExpandMenu((ex) => !ex);
-  };
+export const RestaurantCategory = ({ category, expandMenu, onExpandMenu }) => {
   return (
     <>
       <div className="w-full mb-8  shadow-sm">
         <ul className="mb-4">
           <li
             className=" flex justify-between items-center cursor-pointer"
-            onClick={handleExpand}
+            onClick={onExpandMenu}
           >
             <h2 className=" font-bold text-2xl">{`${category?.card?.card?.title.toUpperCase()} (${
               category?.card?.card?.itemCards.length
