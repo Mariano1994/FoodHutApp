@@ -23,13 +23,13 @@ export const RestaurantMenu = () => {
     locality,
   } = restInfo?.data?.cards[2]?.card?.card?.info;
 
-  const { itemCards } =
-    restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card;
+  // const { itemCards } =
+  //   restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+  //     ?.card;
 
-  console.log(
-    restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-  );
+  // console.log(
+  //   restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+  // );
 
   const categories =
     restInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -38,9 +38,7 @@ export const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  console.log(categories);
-
-  if (itemCards === undefined) return <h1>MENU NOT AVALAIBLE</h1>;
+  // if (itemCards === undefined) return <h1>MENU NOT AVALAIBLE</h1>;
 
   return (
     <>
@@ -79,8 +77,11 @@ export const RestaurantMenu = () => {
           <Divider />
 
           {
-            categories.map((category, index) => (
-              <RestaurantCategory category={category} key={index} />
+            categories.map((category) => (
+              <RestaurantCategory
+                category={category}
+                key={category.card.card.title}
+              />
             ))
 
             //
