@@ -12,7 +12,10 @@ export default {
         primary: "#f54748",
         secondary: "#FDC55E",
         alt: "#E5E5E5",
-        gradient: "rgba(245, 71, 72, 0.3)",
+        gradient: "rgba(253, 197, 94, 0.1)",
+      },
+      boxShadow: {
+        "3xl": "0px 0px 12px -3px rgba(0, 0, 0, 0.1)",
       },
     },
   },
