@@ -31,8 +31,6 @@ export const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  // if (itemCards === undefined) return <h1>MENU NOT AVALAIBLE</h1>;
-
   return (
     <>
       <div className="grid place-content-center">
@@ -75,7 +73,7 @@ export const RestaurantMenu = () => {
               key={category.card.card.title}
               expandMenu={index === showIndex ? true : false}
               onExpandMenu={() => {
-                setShowIndex(index);
+                setShowIndex(showIndex === index ? false : index);
               }}
             />
           ))}
