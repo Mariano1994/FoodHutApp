@@ -31,8 +31,11 @@ export const Header = () => {
               <li> Our Menu</li>
             </a>
 
-            <Link to="/cart">
+            <Link to="/cart" className="flex">
               <ShoppingCart color="#191919" />
+              <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-primary text-white ml-[1.3rem] -mt-[0.4rem]">
+                0
+              </span>
             </Link>
 
             <a

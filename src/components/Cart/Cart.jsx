@@ -52,45 +52,6 @@ export const Cart = () => {
                 </span>
               </div>
               <Divider />
-              <div className="flex flex-1 items-center gap-[5rem]  ">
-                <img
-                  src={exFood}
-                  className=" h-[11rem] w-[11rem] rounded-full"
-                />
-                <div>
-                  <h3 className=" text-[1.5rem] text-primary font-medium">
-                    Risotto Italiano
-                  </h3>
-                  <span className="text-[1rem]">Delicios risotto</span>
-                </div>
-                <div className=" border border-solid rounded-3xl px-2 w-[15rem]">
-                  <div className="flex items-center justify-around">
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Minus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />
-                    </span>
-                    <span className="text-[1.5rem] font-light">1</span>
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Plus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />{" "}
-                    </span>
-                  </div>
-                </div>
-                <span className="text-[1.5rem] font-light"> Rs 100, 3 </span>
-                <span>
-                  <X
-                    size={18}
-                    className="cursor-pointer transition-all hover:text-primary"
-                  />
-                </span>
-              </div>
-              <Divider />
 
               <div className="flex flex-1 items-center gap-[5rem]  ">
                 <img
