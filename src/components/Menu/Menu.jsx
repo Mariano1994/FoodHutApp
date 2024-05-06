@@ -6,7 +6,7 @@ import { Shimmer } from "../Shimmer/Shimmer";
 import { useContext } from "react";
 import { FoodContext } from "../../context/FoodContext";
 
-export const Menu = ({ query, onSetQuery, onHandleTopRatedFood }) => {
+export const Menu = () => {
   const OpenStatusRestaurant = OpenStatusRestaurants(FoodCard);
 
   const { filteredFood, isLoading } = useContext(FoodContext);

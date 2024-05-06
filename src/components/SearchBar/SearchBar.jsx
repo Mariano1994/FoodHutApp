@@ -5,6 +5,7 @@ import { FoodContext } from "../../context/FoodContext";
 export const SearchBar = () => {
   const { query, handlerSetQuery, handlerTopRatedFood } =
     useContext(FoodContext);
+
   return (
     <>
       <div className="flex items-center gap-[1.5rem] mb-[5rem] ">

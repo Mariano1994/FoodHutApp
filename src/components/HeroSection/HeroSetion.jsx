@@ -13,12 +13,8 @@ import Costumer5 from "../../assets/costumersPhoto/5.jpg";
 import Costumer6 from "../../assets/costumersPhoto/6.jpg";
 import Costumer7 from "../../assets/costumersPhoto/7.jpg";
 import { Header } from "../Header/Header";
-import { useContext } from "react";
-import { FoodContext } from "../../context/FoodContext";
 
 export const HeroSection = () => {
-  const x = useContext(FoodContext);
-  console.log(x);
   return (
     <>
       <div className="hero-wrapper h-screen w-screen bg-alt">

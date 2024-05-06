@@ -6,8 +6,6 @@ import { useContext } from "react";
 import { FoodContext } from "../../context/FoodContext";
 
 export const Cart = () => {
-  const card = useContext(FoodContext);
-  console.log(card);
   return (
     <>
       <div className="w-full h-screen bg-white">
