@@ -4,7 +4,11 @@ export const ShoppingCardContext = createContext();
 
 export const ShoppingCardContextProvider = ({ children }) => {
   const [cardItems, setCardItems] = useState([]);
-  const [itemQuantity, setItemQuantity] = useState(1);
+
+  const addQuantityOnCardItem = () => {
+    cardItems.map((item) => (item.card.info.quantity = 1));
+  };
+  addQuantityOnCardItem();
 
   const handlerAddFoodOnShoppingCard = (myCard) => {
     setCardItems(() => [myCard, ...cardItems]);
@@ -33,8 +37,8 @@ export const ShoppingCardContextProvider = ({ children }) => {
         handlerAddFoodOnShoppingCard,
         handlerClearShoppingCard,
         handlerRamoveItemFromShoppingCard,
-        itemQuantity,
         totalCost,
+        setCardItems,
       }}
     >
       {children}

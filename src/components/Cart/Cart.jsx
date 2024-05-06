@@ -6,22 +6,37 @@ import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const Cart = () => {
+  const [itemQuantity, setItemQuantity] = useState(1);
   const {
     cardItems,
     handlerRamoveItemFromShoppingCard,
-    itemQuantity,
     totalCost,
+    handlerClearShoppingCard,
   } = useContext(ShoppingCardContext);
 
-  console.log(cardItems);
+  const handlerIncreasShoppingItemQuantity = (id) => {
+    cardItems.map((item) => {
+      if (item.card.info.id === id) {
+        setItemQuantity(itemQuantity + 1);
+      }
+    });
+  };
 
   return (
     <>
       <div className="w-full h-screen bg-white">
         <div className=" absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 p-[40px] w-[80%] h-[80%] ">
-          <h2 className="  mb-[5.5rem] text-[1.8rem] font-normal">
-            <span className="text-primary">Shopping</span> Card
-          </h2>
+          <div className="flex items-center gap-[3rem]">
+            <h2 className="  mb-[5.5rem] text-[1.8rem] font-semibold">
+              <span className="text-primary">Shopping</span> Card
+            </h2>
+            <button
+              className="-mt-[5.6rem] py-4 px-8 bg-primary text-white text-[1.3rem] rounded-xl hover:brightness-95"
+              onClick={handlerClearShoppingCard}
+            >
+              Remove All items
+            </button>
+          </div>
           <div className=" flex justify-between">
             <div className=" flex flex-col gap-[8px] overflow-scroll">
               {cardItems.map((item) => (
@@ -51,7 +66,14 @@ export const Cart = () => {
                         <span className="text-[1.5rem] font-light">
                           {itemQuantity}
                         </span>
-                        <span className="text-[2rem] font-light">
+                        <span
+                          className="text-[2rem] font-light"
+                          onClick={() =>
+                            handlerIncreasShoppingItemQuantity(
+                              item?.card?.info?.id
+                            )
+                          }
+                        >
                           {" "}
                           <Plus
                             size={15}

@@ -44,8 +44,8 @@ export const RestaurantMenuCard = ({ card }) => {
 
                 <button
                   onClick={() => handlerAddFoodOnShoppingCard(c)}
-                  className="absolute ml-[6rem] -mt-[1.5rem] py-2 px-8 bg-primary text-white text-[1.3rem] rounded-xl cursor-pointer opacity-0 transition-all
-                 hover:opacity-100"
+                  className="absolute ml-[6rem] -mt-[1.5rem] py-2 px-8 bg-primary text-white text-[1.3rem] rounded-xl cursor-pointer  transition-all
+                 "
                 >
                   Add on Card
                 </button>
