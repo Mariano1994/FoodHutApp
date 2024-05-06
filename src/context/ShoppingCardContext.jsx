@@ -20,7 +20,9 @@ export const ShoppingCardContextProvider = ({ children }) => {
   };
 
   const totalCost = cardItems.reduce(
-    (total, item) => (total += item.card.info.price),
+    (total, item) =>
+      (total +=
+        item.card.info.price !== undefined ? item.card.info.price / 100 : 250),
     0
   );
 

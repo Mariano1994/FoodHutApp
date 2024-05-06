@@ -62,7 +62,10 @@ export const Cart = () => {
                     </div>
                     <span className="text-[1.5rem] font-light">
                       {" "}
-                      Rs {item?.card?.info?.price / 100}{" "}
+                      Rs{" "}
+                      {item?.card?.info?.price !== undefined
+                        ? item?.card?.info?.price / 100
+                        : 250}{" "}
                     </span>
                     <span
                       onClick={() =>
@@ -90,7 +93,7 @@ export const Cart = () => {
               <div className=" flex justify-between mt-[3rem] text-[1.5rem] font-medium]">
                 <span>Total </span>
                 <span className="font-bold text-primary text-[1.8rem] mb-[4rem]">
-                  Rs {totalCost / 100}
+                  Rs {totalCost}
                 </span>
               </div>
               <Divider />
