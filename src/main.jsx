@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Cart } from "./components/Cart/Cart.jsx";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage.jsx";
 import { RestaurantMenu } from "./components/RestaurantMenu/RestaurantMenu.jsx";
+import { FoodContextProvider } from "./context/FoodContext.jsx";
 
 const appRoutes = createBrowserRouter([
   {
@@ -26,6 +27,8 @@ const appRoutes = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={appRoutes} />
+    <FoodContextProvider>
+      <RouterProvider router={appRoutes} />
+    </FoodContextProvider>
   </React.StrictMode>
 );

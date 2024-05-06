@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import Detail from "../../assets/detail.svg";
 import Rose from "../../assets/rosemary.svg";
 import { FoodCard } from "../FoodCard/FoodCard";
 import { Shimmer } from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
+import { FoodContext } from "../../context/FoodContext";
 
-export const SpecialOffers = ({ cardsInfo, isLoading }) => {
+export const SpecialOffers = () => {
+  const { foodCards, isLoading } = useContext(FoodContext);
+  console.log(foodCards, isLoading);
   return (
     <>
       <div
@@ -27,7 +31,7 @@ export const SpecialOffers = ({ cardsInfo, isLoading }) => {
 
       <div className="flex flex-wrap h-auto items-center justify-center gap-8 mx-28 mb-56">
         {!isLoading ? (
-          cardsInfo?.map((card, index) => {
+          foodCards?.map((card, index) => {
             if (index <= 3)
               return (
                 <Link

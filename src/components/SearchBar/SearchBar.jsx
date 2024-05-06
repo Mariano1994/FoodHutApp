@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import SearchButtonSubmit from "../../assets/search-button-submit.svg";
+import { FoodContext } from "../../context/FoodContext";
 
-export const SearchBar = ({ query, onSetQuery, onHandleTopRatedFood }) => {
+export const SearchBar = () => {
+  const { query, handlerSetQuery, handlerTopRatedFood } =
+    useContext(FoodContext);
   return (
     <>
       <div className="flex items-center gap-[1.5rem] mb-[5rem] ">
@@ -11,7 +15,7 @@ export const SearchBar = ({ query, onSetQuery, onHandleTopRatedFood }) => {
             className=" flex-1 outline-none border-none placeholder:text-[1.8rem]"
             required
             value={query}
-            onChange={onSetQuery}
+            onChange={handlerSetQuery}
           />
           <button
             type="submit"
@@ -22,7 +26,7 @@ export const SearchBar = ({ query, onSetQuery, onHandleTopRatedFood }) => {
         </form>
         <button
           className="flex justify-center items-center h-[4.5rem] bg-primary text-alt cursor-pointer rounded-[30px] py-4 px-[1.5rem] -mt-[0.8rem]"
-          onClick={onHandleTopRatedFood}
+          onClick={handlerTopRatedFood}
         >
           Filter by Top Rated Food
         </button>

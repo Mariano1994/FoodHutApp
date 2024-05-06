@@ -2,8 +2,12 @@ import exFood from "../../assets/exFood.jpg";
 import { Plus, Minus, X } from "lucide-react";
 import { Divider } from "../Divider/Divider";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { FoodContext } from "../../context/FoodContext";
 
 export const Cart = () => {
+  const card = useContext(FoodContext);
+  console.log(card);
   return (
     <>
       <div className="w-full h-screen bg-white">

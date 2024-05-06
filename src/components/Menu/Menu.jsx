@@ -3,15 +3,13 @@ import { FoodCard, OpenStatusRestaurants } from "../FoodCard/FoodCard";
 import { NotFoundMessage } from "../NotFoundMessage/NotFoundMessage";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Shimmer } from "../Shimmer/Shimmer";
+import { useContext } from "react";
+import { FoodContext } from "../../context/FoodContext";
 
-export const Menu = ({
-  menu,
-  query,
-  onSetQuery,
-  onHandleTopRatedFood,
-  isLoading,
-}) => {
+export const Menu = ({ query, onSetQuery, onHandleTopRatedFood }) => {
   const OpenStatusRestaurant = OpenStatusRestaurants(FoodCard);
+
+  const { filteredFood, isLoading } = useContext(FoodContext);
 
   return (
     <>
@@ -24,25 +22,21 @@ export const Menu = ({
             <span className="text-primary">Love</span>
           </h2>
         </div>
-        <SearchBar
-          query={query}
-          onSetQuery={onSetQuery}
-          onHandleTopRatedFood={onHandleTopRatedFood}
-        />
+        <SearchBar />
         {!isLoading ? (
           <div className="flex flex-wrap h-auto items-center justify-center gap-8 mx-28 mb-56">
-            {menu.length > 0 ? (
-              menu
-                .map((men) => (
+            {filteredFood.length > 0 ? (
+              filteredFood
+                .map((food) => (
                   <Link
-                    to={`/restaurants/${men?.info?.id}`}
-                    key={men?.info?.id}
+                    to={`/restaurants/${food?.info?.id}`}
+                    key={food?.info?.id}
                   >
                     {" "}
-                    {!men.info.isOpen ? (
-                      <FoodCard card={men} />
+                    {!food.info.isOpen ? (
+                      <FoodCard card={food} />
                     ) : (
-                      <OpenStatusRestaurant card={men} />
+                      <OpenStatusRestaurant card={food} />
                     )}
                   </Link>
                 ))

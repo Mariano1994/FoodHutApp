@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
 import { HeroSection } from "./components/HeroSection/HeroSetion";
@@ -8,11 +8,10 @@ import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
 import useOnlineStatus from "./utils/hooks/useOnlineStatus";
 import { Shimmer } from "./components/Shimmer/Shimmer";
+import { FoodContext, FoodContextProvider } from "./context/FoodContext";
 
 export const App = () => {
-  const [foodCards, setFoodCards] = useState([]);
-  const [query, setQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const { setFoodCards, setIsLoading } = useContext(FoodContext);
 
   // const foodCards = useResturant();
 
@@ -36,23 +35,6 @@ export const App = () => {
     fetchData();
   }, []);
 
-  const handlerSetQuery = (event) => {
-    setQuery(event.target.value);
-  };
-
-  // Function to filter top rated foods
-  const filteredFood = foodCards?.filter((foodCard) =>
-    foodCard?.info?.name.toLowerCase().includes(query?.toLowerCase())
-  );
-
-  // Function to handle sort by top rationg
-  const handlerTopRatedFood = () => {
-    const topRated = foodCards
-      .filter((foodCard) => foodCard?.info?.avgRating > 4.2)
-      .sort((a, b) => a.info?.avgRating - b.info?.avgRating);
-    setFoodCards(topRated);
-  };
-
   const onlineStatus = useOnlineStatus();
 
   if (!onlineStatus) {
@@ -69,18 +51,9 @@ export const App = () => {
   return (
     <div className="app-container">
       <HeroSection />
-      <SpecialOffers cardsInfo={foodCards} isLoading={isLoading} />
-
+      <SpecialOffers />
       <WhyFoodHut />
-
-      <Menu
-        menu={filteredFood}
-        onHandleTopRatedFood={handlerTopRatedFood}
-        query={query}
-        onSetQuery={handlerSetQuery}
-        isLoading={isLoading}
-      />
-
+      <Menu />
       <PopularFood />
       <Footer />
     </div>
