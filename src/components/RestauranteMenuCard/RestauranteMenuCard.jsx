@@ -30,7 +30,7 @@ export const RestaurantMenuCard = ({ card }) => {
                 </p>
 
                 <span className="mt-[1.5rem] font-bold text-primary text-[1.6rem]">
-                  Rs {c.card.info.price / 100 || 250}
+                  Rs {`${c.card.info.price / 100}` || `${Number(250)}`}
                 </span>
               </div>
               <div>

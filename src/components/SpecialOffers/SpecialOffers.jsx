@@ -8,7 +8,6 @@ import { FoodContext } from "../../context/FoodContext";
 
 export const SpecialOffers = () => {
   const { foodCards, isLoading } = useContext(FoodContext);
-  console.log(foodCards, isLoading);
   return (
     <>
       <div

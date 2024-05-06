@@ -6,8 +6,14 @@ import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const Cart = () => {
-  const { cardItems, handlerRamoveItemFromShoppingCard } =
-    useContext(ShoppingCardContext);
+  const {
+    cardItems,
+    handlerRamoveItemFromShoppingCard,
+    itemQuantity,
+    totalCost,
+  } = useContext(ShoppingCardContext);
+
+  console.log(cardItems);
 
   return (
     <>
@@ -42,7 +48,9 @@ export const Cart = () => {
                             className="cursor-pointer transition-all hover:text-secondary"
                           />
                         </span>
-                        <span className="text-[1.5rem] font-light">1</span>
+                        <span className="text-[1.5rem] font-light">
+                          {itemQuantity}
+                        </span>
                         <span className="text-[2rem] font-light">
                           {" "}
                           <Plus
@@ -82,7 +90,7 @@ export const Cart = () => {
               <div className=" flex justify-between mt-[3rem] text-[1.5rem] font-medium]">
                 <span>Total </span>
                 <span className="font-bold text-primary text-[1.8rem] mb-[4rem]">
-                  Rs 500,9
+                  Rs {totalCost / 100}
                 </span>
               </div>
               <Divider />
