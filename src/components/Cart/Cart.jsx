@@ -1,11 +1,14 @@
-import exFood from "../../assets/exFood.jpg";
 import { Plus, Minus, X } from "lucide-react";
 import { Divider } from "../Divider/Divider";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { FoodContext } from "../../context/FoodContext";
+import { useContext, useState } from "react";
+import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
+import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const Cart = () => {
+  const { cardItems, handlerRamoveItemFromShoppingCard } =
+    useContext(ShoppingCardContext);
+
   return (
     <>
       <div className="w-full h-screen bg-white">
@@ -14,129 +17,62 @@ export const Cart = () => {
             <span className="text-primary">Shopping</span> Card
           </h2>
           <div className=" flex justify-between">
-            <div className=" flex flex-col gap-[10px] overflow-scroll">
-              <div className="flex flex-1 items-center gap-[5rem]  ">
-                <img
-                  src={exFood}
-                  className=" h-[11rem] w-[11rem] rounded-full"
-                />
-                <div>
-                  <h3 className=" text-[1.5rem] text-primary font-medium">
-                    Risotto Italiano
-                  </h3>
-                  <span className="text-[1rem]">Delicios risotto</span>
-                </div>
-                <div className=" border border-solid rounded-3xl px-2 w-[15rem]">
-                  <div className="flex items-center justify-around">
-                    <span className="text-[2rem] font-light">
+            <div className=" flex flex-col gap-[8px] overflow-scroll">
+              {cardItems.map((item) => (
+                <div key={item?.card?.info?.id}>
+                  <div className="flex flex-1 items-center gap-[3rem]  ">
+                    <img
+                      src={`${BASE_IMAGE_URL}${item?.card?.info?.imageId}`}
+                      className=" h-[11rem] w-[11rem] rounded-full"
+                    />
+                    <div>
+                      <h3 className=" text-[1.5rem] text-primary font-medium w-[30rem]">
+                        {item?.card?.info?.name}
+                      </h3>
+                      <span className="text-[1rem]">
+                        {item?.card?.info?.category}
+                      </span>
+                    </div>
+                    <div className=" border border-solid rounded-3xl px-2 w-[15rem]">
+                      <div className="flex items-center justify-around">
+                        <span className="text-[2rem] font-light">
+                          {" "}
+                          <Minus
+                            size={15}
+                            className="cursor-pointer transition-all hover:text-secondary"
+                          />
+                        </span>
+                        <span className="text-[1.5rem] font-light">1</span>
+                        <span className="text-[2rem] font-light">
+                          {" "}
+                          <Plus
+                            size={15}
+                            className="cursor-pointer transition-all hover:text-secondary"
+                          />{" "}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="text-[1.5rem] font-light">
                       {" "}
-                      <Minus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
+                      Rs {item?.card?.info?.price / 100}{" "}
+                    </span>
+                    <span
+                      onClick={() =>
+                        handlerRamoveItemFromShoppingCard(item?.card?.info?.id)
+                      }
+                    >
+                      <X
+                        size={18}
+                        className="cursor-pointer transition-all hover:text-primary"
                       />
                     </span>
-                    <span className="text-[1.5rem] font-light">1</span>
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Plus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />{" "}
-                    </span>
                   </div>
+                  <Divider />
                 </div>
-                <span className="text-[1.5rem] font-light"> Rs 100, 3 </span>
-                <span>
-                  <X
-                    size={18}
-                    className="cursor-pointer transition-all hover:text-primary"
-                  />
-                </span>
-              </div>
-              <Divider />
-
-              <div className="flex flex-1 items-center gap-[5rem]  ">
-                <img
-                  src={exFood}
-                  className=" h-[11rem] w-[11rem] rounded-full"
-                />
-                <div>
-                  <h3 className=" text-[1.5rem] text-primary font-medium">
-                    Risotto Italiano
-                  </h3>
-                  <span className="text-[1rem]">Delicios risotto</span>
-                </div>
-                <div className=" border border-solid rounded-3xl px-2 w-[15rem]">
-                  <div className="flex items-center justify-around">
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Minus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />
-                    </span>
-                    <span className="text-[1.5rem] font-light">1</span>
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Plus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />{" "}
-                    </span>
-                  </div>
-                </div>
-                <span className="text-[1.5rem] font-light"> Rs 100, 3 </span>
-                <span>
-                  <X
-                    size={18}
-                    className="cursor-pointer transition-all hover:text-primary"
-                  />
-                </span>
-              </div>
-              <Divider />
-
-              <div className="flex flex-1 items-center gap-[5rem]  ">
-                <img
-                  src={exFood}
-                  className=" h-[11rem] w-[11rem] rounded-full"
-                />
-                <div>
-                  <h3 className=" text-[1.5rem] text-primary font-medium">
-                    Risotto Italiano
-                  </h3>
-                  <span className="text-[1rem]">Delicios risotto</span>
-                </div>
-                <div className=" border border-solid rounded-3xl px-2 w-[15rem]">
-                  <div className="flex items-center justify-around">
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Minus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />
-                    </span>
-                    <span className="text-[1.5rem] font-light">1</span>
-                    <span className="text-[2rem] font-light">
-                      {" "}
-                      <Plus
-                        size={15}
-                        className="cursor-pointer transition-all hover:text-secondary"
-                      />{" "}
-                    </span>
-                  </div>
-                </div>
-                <span className="text-[1.5rem] font-light"> Rs 100, 3 </span>
-                <span>
-                  <X
-                    size={18}
-                    className="cursor-pointer transition-all hover:text-primary"
-                  />
-                </span>
-              </div>
-              <Divider />
+              ))}
             </div>
 
-            <div className=" w-[40%] h-[450px] rounded-2xl p-10 bg-gradient shadow-sm">
+            <div className=" w-[35%] h-[450px] rounded-2xl p-10 bg-gradient shadow-sm">
               <div className=" flex items-center">
                 <span className="text-[1.5rem] font-medium ]">
                   User: Mariano Artur

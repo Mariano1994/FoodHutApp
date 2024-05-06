@@ -2,8 +2,12 @@ import { Divider } from "../Divider/Divider";
 import defaultImage from "../../assets/defaultImage.svg";
 import { Star } from "lucide-react";
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
+import { useContext } from "react";
+import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const RestaurantMenuCard = ({ card }) => {
+  const { handlerAddFoodOnShoppingCard } = useContext(ShoppingCardContext);
+
   return (
     <>
       <div className="flex flex-col w-full">
@@ -26,7 +30,7 @@ export const RestaurantMenuCard = ({ card }) => {
                 </p>
 
                 <span className="mt-[1.5rem] font-bold text-primary text-[1.6rem]">
-                  Rs {c.card.info.price / 100 || "N/A"}
+                  Rs {c.card.info.price / 100 || 250}
                 </span>
               </div>
               <div>
@@ -34,6 +38,14 @@ export const RestaurantMenuCard = ({ card }) => {
                   src={`${BASE_IMAGE_URL}${c.card.info.imageId}`}
                   className=" w-[22rem] h-[18rem] rounded-[8px]"
                 />
+
+                <button
+                  onClick={() => handlerAddFoodOnShoppingCard(c)}
+                  className="absolute ml-[6rem] -mt-[1.5rem] py-2 px-8 bg-primary text-white text-[1.3rem] rounded-xl cursor-pointer opacity-0 transition-all
+                 hover:opacity-100"
+                >
+                  Add on Card
+                </button>
               </div>
             </div>
             <Divider />

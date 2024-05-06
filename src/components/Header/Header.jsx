@@ -1,10 +1,13 @@
 import ImageLogo from "../../assets/Logo.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const Header = () => {
   const [isLoing, setIsLogin] = useState(false);
+
+  const { cardItems } = useContext(ShoppingCardContext);
 
   const handlerLogin = () => {
     setIsLogin((log) => !log);
@@ -34,7 +37,7 @@ export const Header = () => {
             <Link to="/cart" className="flex">
               <ShoppingCart color="#191919" />
               <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-primary text-white ml-[1.3rem] -mt-[0.4rem]">
-                0
+                {cardItems.length}
               </span>
             </Link>
 

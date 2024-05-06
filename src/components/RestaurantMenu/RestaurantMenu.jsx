@@ -6,12 +6,15 @@ import { ArrowLeft, ShoppingCart } from "lucide-react";
 import { MenuCardShimmer } from "../MenuCardShimmer/MenuCardShimmer";
 import useRestaurantMenu from "../../utils/hooks/useRestaurantMenu";
 import { RestaurantCategory } from "../RestaurantCategory/RestaurantCategory";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
   const restInfo = useRestaurantMenu(resId);
   const [showIndex, setShowIndex] = useState(0);
+
+  const { cardItems } = useContext(ShoppingCardContext);
 
   if (restInfo === null) return <MenuCardShimmer />;
 
@@ -45,7 +48,7 @@ export const RestaurantMenu = () => {
           <Link to={"/cart"} className="flex items-center justify-center">
             <ShoppingCart size={28} className="mt-[7.8rem] text-primary" />
             <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-secondary text-bas ml-[1.2rem] mt-[5.5rem] font-medium text-[1.5rem]">
-              0
+              {cardItems.length}
             </span>
           </Link>
         </div>
