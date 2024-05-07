@@ -1,14 +1,10 @@
 import { createContext, useState } from "react";
+import { Toaster, toast } from "sonner";
 
 export const ShoppingCardContext = createContext();
 
 export const ShoppingCardContextProvider = ({ children }) => {
   const [cardItems, setCardItems] = useState([]);
-
-  const addQuantityOnCardItem = () => {
-    cardItems.map((item) => (item.card.info.quantity = 1));
-  };
-  addQuantityOnCardItem();
 
   const handlerAddFoodOnShoppingCard = (myCard) => {
     setCardItems(() => [myCard, ...cardItems]);
@@ -16,10 +12,11 @@ export const ShoppingCardContextProvider = ({ children }) => {
 
   const handlerClearShoppingCard = () => {
     setCardItems([]);
+    toast.info("Shopping cart cleaned");
   };
 
-  const handlerRamoveItemFromShoppingCard = (id) => {
-    const list = cardItems.filter((item) => item.card.info.id !== id);
+  const handlerRemoveItemFromShoppingCard = (id) => {
+    const list = cardItems.filter((item) => item?.card?.info?.id !== id);
     setCardItems(list);
   };
 
@@ -36,11 +33,12 @@ export const ShoppingCardContextProvider = ({ children }) => {
         cardItems,
         handlerAddFoodOnShoppingCard,
         handlerClearShoppingCard,
-        handlerRamoveItemFromShoppingCard,
+        handlerRemoveItemFromShoppingCard,
         totalCost,
         setCardItems,
       }}
     >
+      <Toaster richColors position="top-right" />
       {children}
     </ShoppingCardContext.Provider>
   );

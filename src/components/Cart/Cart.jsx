@@ -4,20 +4,24 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
+import { toast } from "sonner";
 
 export const Cart = () => {
   const [itemQuantity, setItemQuantity] = useState(1);
   const {
     cardItems,
-    handlerRamoveItemFromShoppingCard,
+    handlerRemoveItemFromShoppingCard,
     totalCost,
     handlerClearShoppingCard,
+    setCardItems,
   } = useContext(ShoppingCardContext);
+
+  cardItems.map((item) => (item.card.info.quantity = 1));
 
   const handlerIncreasShoppingItemQuantity = (id) => {
     cardItems.map((item) => {
-      if (item.card.info.id === id) {
-        setItemQuantity(itemQuantity + 1);
+      if (item?.card?.info?.id === id) {
+        setCardItems([...cardItems, item.card.info.quantity++]);
       }
     });
   };
@@ -64,7 +68,7 @@ export const Cart = () => {
                           />
                         </span>
                         <span className="text-[1.5rem] font-light">
-                          {itemQuantity}
+                          {item.card.info.quantity}
                         </span>
                         <span
                           className="text-[2rem] font-light"
@@ -90,9 +94,10 @@ export const Cart = () => {
                         : 250}{" "}
                     </span>
                     <span
-                      onClick={() =>
-                        handlerRamoveItemFromShoppingCard(item?.card?.info?.id)
-                      }
+                      onClick={() => {
+                        handlerRemoveItemFromShoppingCard(item?.card?.info?.id);
+                        toast.error("Item removed from shopping cart");
+                      }}
                     >
                       <X
                         size={18}

@@ -13,7 +13,6 @@ const useRestaurantMenu = (restId) => {
 
     getMenuData();
   }, []);
-
   return restInfo;
 };
 

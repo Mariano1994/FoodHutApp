@@ -4,9 +4,12 @@ import { Star } from "lucide-react";
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { useContext } from "react";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
+import { toast } from "sonner";
 
 export const RestaurantMenuCard = ({ card }) => {
   const { handlerAddFoodOnShoppingCard } = useContext(ShoppingCardContext);
+
+  card.map((item) => (item.card.info.quantity = 1));
 
   return (
     <>
@@ -36,6 +39,7 @@ export const RestaurantMenuCard = ({ card }) => {
                     : 250}
                 </span>
               </div>
+
               <div>
                 <img
                   src={`${BASE_IMAGE_URL}${c.card.info.imageId}`}
@@ -43,7 +47,10 @@ export const RestaurantMenuCard = ({ card }) => {
                 />
 
                 <button
-                  onClick={() => handlerAddFoodOnShoppingCard(c)}
+                  onClick={() => {
+                    handlerAddFoodOnShoppingCard(c);
+                    toast.success("Item added on Shopping Cart");
+                  }}
                   className="absolute ml-[6rem] -mt-[1.5rem] py-2 px-8 bg-primary text-white text-[1.3rem] rounded-xl cursor-pointer  transition-all
                  "
                 >
