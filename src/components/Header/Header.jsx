@@ -1,11 +1,12 @@
 import ImageLogo from "../../assets/Logo.svg";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 import { UserContext } from "../../context/UserContext";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Login } from "../Login/Login";
+import { toast } from "sonner";
 
 export const Header = () => {
   const { cardItems } = useContext(ShoppingCardContext);
@@ -35,10 +36,17 @@ export const Header = () => {
               </a>
 
               <Link to={loginStatusUser ? "/cart" : "/"} className="flex">
-                <ShoppingCart color="#191919" />
-                <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-primary text-white ml-[1.3rem] -mt-[0.4rem]">
-                  {cardItems.length}
-                </span>
+                <ShoppingCart
+                  color="#191919"
+                  onClick={() => {
+                    !loginStatusUser ? toast.info("Login to open cart") : null;
+                  }}
+                />
+                {loginStatusUser && (
+                  <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-primary text-white ml-[1.3rem] -mt-[0.4rem]">
+                    {cardItems.length}
+                  </span>
+                )}
               </Link>
 
               {loginStatusUser ? (
@@ -47,11 +55,14 @@ export const Header = () => {
                     className="h-[5rem] w-[5rem] flex justify-center items-center bg-primary rounded-full ml-[1rem] border-[3px] border-white shadow text-white font-semibold cursor-pointer"
                     onClick={handlerLogout}
                   >
-                    {userName[0]}
+                    {userName[0].toUpperCase()}
                   </div>
 
                   {showLogout && (
-                    <div className=" ml-[1.1rem] bg-white  px-4 rounded">
+                    <div
+                      className=" ml-[1.1rem] bg-white  px-4 rounded"
+                      onClick={handlerLogout}
+                    >
                       <span
                         className=" font-medium text-lg hover:text-primary brightness-95 cursor-pointer"
                         onClick={handlerLogin}
@@ -67,7 +78,6 @@ export const Header = () => {
                     <a
                       href="#"
                       className="flex items-center justify-center w-36 h-14 bg-primary text-alt  rounded-[10px]  left-8 right-12"
-                      // onClick={handlerLogin}
                     >
                       Login
                     </a>

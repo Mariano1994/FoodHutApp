@@ -8,6 +8,10 @@ import useRestaurantMenu from "../../utils/hooks/useRestaurantMenu";
 import { RestaurantCategory } from "../RestaurantCategory/RestaurantCategory";
 import { useContext, useState } from "react";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
+import { UserContext } from "../../context/UserContext";
+import { toast } from "sonner";
+import { Header } from "../Header/Header";
+import { LoginTriger } from "../LoginTriger/LoginTriger";
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -15,6 +19,7 @@ export const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(0);
 
   const { cardItems } = useContext(ShoppingCardContext);
+  const { loginStatusUser, handlerLogin } = useContext(UserContext);
 
   if (restInfo === null) return <MenuCardShimmer />;
 
@@ -45,11 +50,24 @@ export const RestaurantMenu = () => {
             <ArrowLeft size={15} /> Home
           </Link>
 
-          <Link to={"/cart"} className="flex items-center justify-center">
-            <ShoppingCart size={28} className="mt-[7.8rem] text-primary" />
-            <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-secondary text-bas ml-[1.2rem] mt-[5.5rem] font-medium text-[1.5rem]">
-              {cardItems.length}
-            </span>
+          <Link
+            to={loginStatusUser ? "/cart" : null}
+            className="flex items-center justify-center"
+          >
+            <ShoppingCart
+              size={28}
+              className="mt-[7.8rem] text-primary"
+              onClick={() => {
+                toast("login to proceed to shopping cart", {
+                  action: <LoginTriger onClick={handlerLogin} />,
+                });
+              }}
+            />
+            {loginStatusUser && (
+              <span className=" flex items-center justify-center absolute h-8 w-8 rounded-full bg-secondary text-bas ml-[1.2rem] mt-[5.5rem] font-medium text-[1.5rem]">
+                {cardItems.length}
+              </span>
+            )}
           </Link>
         </div>
         <div className="flex flex-col items-center w-[60vw]">

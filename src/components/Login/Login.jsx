@@ -24,7 +24,7 @@ export const Login = () => {
             Log into your account you proceed
           </Dialog.Description>
 
-          <form className="mb-[15px] flex flex-col items-center justify-center gap-[2.5rem] h-[21rem] mt-[5rem] ">
+          <form className="mb-[15px] flex flex-col items-center justify-center gap-[2.5rem] h-[32rem] mt-[5rem] ">
             <input
               className="w-[80%] text-base text-[2rem] shadow-gradient focus:shadow-gradient inline-flex flex-1 items-center justify-center rounded-[4px] px-[10px] leading-none shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px] placeholder:text-[1.5rem] h-[2rem]"
               id="name"
@@ -44,26 +44,28 @@ export const Login = () => {
 
             <input
               className="w-[80%] text-base text-2xl shadow-gradient focus:shadow-gradient inline-flex flex-1 items-center justify-center rounded-[4px] px-[10px] leading-none shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px] placeholder:text-[1.5rem]"
-              id="username"
+              id="userpassword"
               type="password"
               placeholder="Password"
               value={userPassWord}
               onChange={onSetUserPassword}
               readOnly
             />
+
+            <div className="mt-[40px] flex justify-center items-center">
+              <Dialog.Close asChild>
+                <button
+                  onClick={handlerLogin}
+                  className="bg-secondary text-white text-[1.5r
+   text-[1.5rem] focus:shadow-gradient inline-flex h-[40px] items-center justify-center rounded-[4px] px-16 font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none hover:brightness-95"
+                  type="submit"
+                >
+                  Login
+                </button>
+              </Dialog.Close>
+            </div>
           </form>
 
-          <div className="mt-[40px] flex justify-center items-center">
-            <Dialog.Close asChild>
-              <button
-                onClick={handlerLogin}
-                className="bg-secondary text-white text-[1.5r
-   text-[1.5rem] focus:shadow-gradient inline-flex h-[40px] items-center justify-center rounded-[4px] px-16 font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none hover:brightness-95"
-              >
-                Login
-              </button>
-            </Dialog.Close>
-          </div>
           <Dialog.Close asChild>
             <button
               className=" text-primary opacity-50 absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none hover:opacity-100"
