@@ -26,6 +26,7 @@ export const App = () => {
   return (
     <div className="app-container">
       {/* <SwiperEx /> */}
+
       <HeroSection />
       <SpecialOffers />
       <WhyFoodHut />

@@ -9,6 +9,7 @@ import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage.jsx";
 import { RestaurantMenu } from "./components/RestaurantMenu/RestaurantMenu.jsx";
 import { FoodContextProvider } from "./context/FoodContext.jsx";
 import { ShoppingCardContextProvider } from "./context/ShoppingCardContext.jsx";
+import { UserContextProvider } from "./context/UserContext.jsx";
 
 const appRoutes = createBrowserRouter([
   {
@@ -29,9 +30,11 @@ const appRoutes = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <FoodContextProvider>
-      <ShoppingCardContextProvider>
-        <RouterProvider router={appRoutes} />
-      </ShoppingCardContextProvider>
+      <UserContextProvider>
+        <ShoppingCardContextProvider>
+          <RouterProvider router={appRoutes} />
+        </ShoppingCardContextProvider>
+      </UserContextProvider>
     </FoodContextProvider>
   </React.StrictMode>
 );
