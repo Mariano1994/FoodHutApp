@@ -58,7 +58,7 @@ export const RestaurantMenu = () => {
               size={28}
               className="mt-[7.8rem] text-primary"
               onClick={() => {
-                toast("login to proceed to shopping cart", {
+                toast("To proceed to shopping cart", {
                   action: <LoginTriger onClick={handlerLogin} />,
                 });
               }}

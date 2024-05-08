@@ -1,17 +1,17 @@
 import { useContext } from "react";
 import { Divider } from "../Divider/Divider";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const CartPaymentForm = () => {
   const { totalCost } = useContext(ShoppingCardContext);
+  const { userName } = useContext(UserContext);
   return (
     <>
       <div className=" w-[35%] h-[450px] rounded-2xl p-10 bg-gradient shadow-sm">
         <div className=" flex items-center">
-          <span className="text-[1.5rem] font-medium ]">
-            User: Mariano Artur
-          </span>
+          <span className="text-[1.5rem] font-medium ]">User: {userName}</span>
         </div>
 
         <div className=" flex justify-between mt-[3rem] text-[1.5rem] font-medium]">
