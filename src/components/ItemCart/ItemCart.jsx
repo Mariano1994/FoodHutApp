@@ -1,6 +1,6 @@
 import { BASE_IMAGE_URL } from "../../utils/ConstURLs";
 import { Divider } from "../Divider/Divider";
-import { Plus, Minus, X } from "lucide-react";
+import { Plus, Minus, Trash2 } from "lucide-react";
 import { useContext } from "react";
 import { toast } from "sonner";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
@@ -60,7 +60,7 @@ export const ItemCart = ({ item }) => {
               toast.error("Item removed from shopping cart");
             }}
           >
-            <X
+            <Trash2
               size={18}
               className="cursor-pointer transition-all hover:text-primary"
             />
