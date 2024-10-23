@@ -106,7 +106,7 @@ export const HeroSection = () => {
             <span>Watch Video</span>
           </div>
         </div>
-        <div className="ml-[4rem] flex">
+        <div className="ml-[4rem] flex animate-bounce">
           <img src={MoveFoward} className="w-[5rem] h-[5rem]" />
         </div>
       </div>

@@ -7,7 +7,6 @@ import { SpecialOffers } from "./components/SpecialOffers/SpecialOffers";
 import { WhyFoodHut } from "./components/WhyFoodHut/WhyFoodHut";
 import useOnlineStatus from "./utils/hooks/useOnlineStatus";
 import { Shimmer } from "./components/Shimmer/Shimmer";
-import { SwiperEx } from "./components/SwiperEx/SwiperEx";
 
 export const App = () => {
   const onlineStatus = useOnlineStatus();
@@ -25,8 +24,6 @@ export const App = () => {
 
   return (
     <div className="app-container">
-      {/* <SwiperEx /> */}
-
       <HeroSection />
       <SpecialOffers />
       <WhyFoodHut />

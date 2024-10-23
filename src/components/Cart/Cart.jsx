@@ -5,18 +5,8 @@ import { CartPaymentForm } from "../CartPaymentForm/CartPaymentForm";
 import { EmptyCartMessage } from "../EmptyCartMessage/EmptyCartMessage";
 
 export const Cart = () => {
-  const { cardItems, handlerClearShoppingCard, setCardItems } =
+  const { cardItems, handlerClearShoppingCard, handlerIncrementQuantityItem } =
     useContext(ShoppingCardContext);
-
-  cardItems.map((item) => (item.card.info.quantity = 1));
-
-  const handlerIncreasShoppingItemQuantity = (id) => {
-    cardItems.map((item) => {
-      if (item?.card?.info?.id === id) {
-        setCardItems([...cardItems, item.card.info.quantity++]);
-      }
-    });
-  };
 
   return (
     <>

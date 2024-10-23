@@ -6,7 +6,9 @@ import { toast } from "sonner";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 
 export const ItemCart = ({ item }) => {
-  const { handlerRemoveItemFromShoppingCard } = useContext(ShoppingCardContext);
+  const { handlerRemoveItemFromShoppingCard, handlerIncrementQuantityItem } =
+    useContext(ShoppingCardContext);
+
   return (
     <>
       <li key={item?.card?.info?.id}>
@@ -36,7 +38,7 @@ export const ItemCart = ({ item }) => {
               <span
                 className="text-[2rem] font-light"
                 onClick={() =>
-                  handlerIncreasShoppingItemQuantity(item?.card?.info?.id)
+                  handlerIncrementQuantityItem(item?.card?.info?.id)
                 }
               >
                 {" "}

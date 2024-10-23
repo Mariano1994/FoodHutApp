@@ -6,6 +6,8 @@ export const ShoppingCardContext = createContext();
 export const ShoppingCardContextProvider = ({ children }) => {
   const [cardItems, setCardItems] = useState([]);
 
+  cardItems.map((item) => (item.card.info.quantity = 1));
+
   const handlerAddFoodOnShoppingCard = (myCard) => {
     setCardItems(() => [myCard, ...cardItems]);
   };
@@ -20,6 +22,31 @@ export const ShoppingCardContextProvider = ({ children }) => {
     setCardItems(list);
   };
 
+  const handlerIncrementQuantityItem = (id) => {
+    setCardItems(
+      cardItems.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item
+      )
+    );
+  };
+
+  const handlerDecrementQuantityItem = (id) => {
+    setCardItems(
+      cardItems.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              quantity: item.quantity - (item.quantity > 1 ? 1 : 0),
+            }
+          : item
+      )
+    );
+  };
   const totalCost = cardItems.reduce(
     (total, item) =>
       (total +=
@@ -36,6 +63,7 @@ export const ShoppingCardContextProvider = ({ children }) => {
         handlerRemoveItemFromShoppingCard,
         totalCost,
         setCardItems,
+        handlerIncrementQuantityItem,
       }}
     >
       <Toaster richColors position="top-right" />

@@ -10,7 +10,6 @@ import { useContext, useState } from "react";
 import { ShoppingCardContext } from "../../context/ShoppingCardContext";
 import { UserContext } from "../../context/UserContext";
 import { toast } from "sonner";
-import { Header } from "../Header/Header";
 import { LoginTriger } from "../LoginTriger/LoginTriger";
 
 export const RestaurantMenu = () => {
@@ -59,7 +58,9 @@ export const RestaurantMenu = () => {
               className="mt-[7.8rem] text-primary"
               onClick={() => {
                 toast("To proceed to shopping cart", {
-                  action: <LoginTriger onClick={handlerLogin} />,
+                  action: !loginStatusUser ? (
+                    <LoginTriger onClick={handlerLogin} />
+                  ) : null,
                 });
               }}
             />
